@@ -24,7 +24,13 @@ namespace music_manage.Model
     }
     public class music
     {
-        string path { get; set; }
+        string Path { get; set; }
+        string Title { get; set; }
+        music(string title,string path)
+        {
+            Path = path;
+            Title = title;
+        }
 
     }
 }

@@ -23,24 +23,62 @@ namespace music_manage
         
         public MainWindow()
         {
+            player = new MediaPlayer();
             InitializeComponent();
+            if (lvmusic.Items.Count == 0)
+            {
+                lvmusicstart();
+            }
         }
+        void lvmusicstart()
+        {
+            Button addmusicbt = new Button();
+            addmusicbt.Content = "+";
+            addmusicbt.FontSize = 50;
 
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             
         }
         public void changetotablistmusic(object sender,RoutedEventArgs e)
         {
-            listmusic.Visibility =Visibility.Visible;
+            Button? tabbt = sender as Button;
+            //ten cua cac button  dc dat lan luot theo cac tab Playing,MyMusic,Detail,Lyric
+            if (tabbt != null)
+            {
+                switch (tabbt.Name)
+                {
+                    case "Playing":
+                        {
+                            
+                            break;
+                        }
+                    case "MyMusic":
+                        {
+                            
+                            break;
+                        }
+                    case "Detail":
+                        {
+                            break;
+                        }
+                    case "Lyric":
+                        {
+                            break;
+                        }
+                }
+            }
+                
+          
         }
         MediaPlayer player;
         public void musiclvclick(object sender, RoutedEventArgs e)
         {
-            string stringuri = "https://zingmp3.vn/embed/playlist/6BUOOID6";
+            string stringuri = "F:\\MWSPr\\music_manage\\Nhac\\5774870.mp3";
 
             //khoi chay media thanh cong 
-            player = new MediaPlayer();
+            
             Uri source = new Uri(stringuri);
             player.Open(source);
             //MessageBox.Show("khoi tao thanh cong");//da thanh cong 
@@ -51,6 +89,10 @@ namespace music_manage
         public void exit(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+        public void playmedia(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
