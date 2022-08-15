@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using music_manage.Model;
 
 namespace music_manage
 {
@@ -20,7 +21,7 @@ namespace music_manage
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         public MainWindow()
         {
             player = new MediaPlayer();
@@ -35,13 +36,20 @@ namespace music_manage
             Button addmusicbt = new Button();
             addmusicbt.Content = "+";
             addmusicbt.FontSize = 50;
-
+            addmusicbt.Click += Addmusicbt_Click;
+            lvmusic.Items.Add(addmusicbt);
         }
+        List<music> listmusic = new List<music>();
+        void Addmusicbt_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Bạn muốn tìm nhạc ở đâu ?", "file location");
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
-        public void changetotablistmusic(object sender,RoutedEventArgs e)
+        public void changetotablistmusic(object sender, RoutedEventArgs e)
         {
             Button? tabbt = sender as Button;
             //ten cua cac button  dc dat lan luot theo cac tab Playing,MyMusic,Detail,Lyric
@@ -51,12 +59,12 @@ namespace music_manage
                 {
                     case "Playing":
                         {
-                            
+
                             break;
                         }
                     case "MyMusic":
                         {
-                            
+
                             break;
                         }
                     case "Detail":
@@ -69,8 +77,8 @@ namespace music_manage
                         }
                 }
             }
-                
-          
+
+
         }
         MediaPlayer player;
         public void musiclvclick(object sender, RoutedEventArgs e)
@@ -78,7 +86,7 @@ namespace music_manage
             string stringuri = "F:\\MWSPr\\music_manage\\Nhac\\5774870.mp3";
 
             //khoi chay media thanh cong 
-            
+
             Uri source = new Uri(stringuri);
             player.Open(source);
             //MessageBox.Show("khoi tao thanh cong");//da thanh cong 

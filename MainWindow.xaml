@@ -39,9 +39,7 @@
             </StackPanel>
             <StackPanel x:Name="listmusic" >
                 <ListView x:Name="lvmusic" Height="800">
-                    <ListViewItem FontSize="50" MouseDoubleClick="musiclvclick">
-                        test
-                    </ListViewItem>
+                    
                 </ListView>
             </StackPanel>
             <Border BorderBrush="Azure" BorderThickness="10" CornerRadius="10">
