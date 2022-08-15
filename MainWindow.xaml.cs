@@ -26,19 +26,9 @@ namespace music_manage
         {
             player = new MediaPlayer();
             InitializeComponent();
-            if (lvmusic.Items.Count == 0)
-            {
-                lvmusicstart();
-            }
+            
         }
-        void lvmusicstart()
-        {
-            Button addmusicbt = new Button();
-            addmusicbt.Content = "+";
-            addmusicbt.FontSize = 50;
-            addmusicbt.Click += Addmusicbt_Click;
-            lvmusic.Items.Add(addmusicbt);
-        }
+       
         List<music> listmusic = new List<music>();
         void Addmusicbt_Click(object sender, RoutedEventArgs e)
         {
@@ -85,13 +75,9 @@ namespace music_manage
         {
             string stringuri = "F:\\MWSPr\\music_manage\\Nhac\\5774870.mp3";
 
-            //khoi chay media thanh cong 
-
             Uri source = new Uri(stringuri);
             player.Open(source);
-            //MessageBox.Show("khoi tao thanh cong");//da thanh cong 
-
-            //bug:::play khong thanh cong
+            
             player.Play();
         }
         public void exit(object sender, RoutedEventArgs e)

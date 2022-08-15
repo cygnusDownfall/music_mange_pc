@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:music_manage"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1000" Width="1000"
+        Title="MainWindow" Height="1200" Width="1000"
         WindowStyle="None">
     <Window.Resources>
         <ResourceDictionary>
@@ -18,7 +18,7 @@
 
     </Window.Resources>
     <Grid>
-
+        
         <StackPanel Width="auto" Height="auto" Background="Black"  HorizontalAlignment="Center">
             <Grid Height="80" Background="GreenYellow">
                 <Button Style="{StaticResource exitbt}"
@@ -37,16 +37,27 @@
                     <Button Width="100" Height="50"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel x:Name="listmusic" >
-                <ListView x:Name="lvmusic" Height="800">
-                    
+            <Grid x:Name="listmusic"  HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="19*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <ListView x:Name="lvmusic" Height="800" Grid.Column="0" >
+                    <ListViewItem Style="{StaticResource lvmusicitems}">
+                        <Button Content="+          Add Your Music" Background="{x:Null}"
+                               HorizontalContentAlignment="Left"
+                            Click="Addmusicbt_Click" Width="900"/>
+                        
+                    </ListViewItem>
                 </ListView>
-            </StackPanel>
-            <Border BorderBrush="Azure" BorderThickness="10" CornerRadius="10">
+                <ScrollViewer Grid.Column="1" >
+                    
+                </ScrollViewer>
+            </Grid>
+            <Border BorderBrush="Azure" BorderThickness="10" CornerRadius="10" Padding="0,0,0,0">
                 <StackPanel x:Name="tab" 
                         HorizontalAlignment="Left"  
                         VerticalAlignment="Center"
-                        Margin="10,0,10,10"
                         Orientation="Horizontal"
                         >
 

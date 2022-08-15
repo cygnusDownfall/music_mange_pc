@@ -7,14 +7,16 @@
         <Setter Property="BorderThickness" Value="10"/>
         <Setter Property="BorderBrush"  Value="LimeGreen"/>
     </Style>
+    
     <Style x:Key="tabbt" TargetType="Button">
         <Setter Property="Width" Value="250"/>
         <Setter Property="Height" Value="125"/>
         <Setter Property="Background" Value="Blue"/>
         <Setter Property="BorderThickness" Value="5"/>
-        <Setter Property="BorderBrush"  Value="Gray"/>
+        <Setter Property="BorderBrush"  Value="White"/>
         <Setter Property="FontSize" Value="40"/>
     </Style>
+    
     <Style x:Key="exitbt" TargetType="Button">
         <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="80"/>
@@ -23,7 +25,24 @@
         <Setter Property="BorderBrush"  Value="Gray"/>
         <Setter Property="FontSize" Value="40"/>
         <Setter Property="Content" Value="X"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+    <Style x:Key="lvmusicitems" TargetType="ListViewItem">
+        <Setter Property="Height" Value="150"/>
+        <Setter Property="Width" Value="1000"/>
+        <Setter Property="BorderThickness" Value="10"/>
+        <Setter Property="BorderBrush"  Value="Black"/>
+        <Setter Property="FontSize" Value="80"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush Opacity="50" StartPoint="0,0" EndPoint="2,1" >
+                    <GradientStop Color="Red" Offset="0"/>
+                    <GradientStop Color="Violet" Offset="0.8"/>
+                    <GradientStop Color="MediumVioletRed"  Offset="1"/>
+                    <GradientStop Color="BlueViolet" Offset="0.1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
     </Style>
 </ResourceDictionary>
