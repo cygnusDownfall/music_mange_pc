@@ -7,10 +7,10 @@ using System.IO;
 
 namespace music_manage.Model
 {
-    public  class savesystem
+    public static class savesystem
     {
-        string savefilepath = "";
-        public void SavePathMusic(List<string> listpath)
+        const string savefilepath = "";
+        public static void SavePathMusic(List<string> listpath)
         {
             
             if (File.Exists(savefilepath))
@@ -25,20 +25,44 @@ namespace music_manage.Model
             }
             
         }
-        public List<string> LoadPathMusic()
+        public static List<music> LoadPathMusic()
         {
-            List<string> res = new List<string>();
+            List<music> lm = new List<music>();
             if (File.Exists(savefilepath))
             {
+                List<string> res = new List<string>();
                 StreamReader strrdr = new StreamReader(savefilepath);
                 while (true)
                 {
                     res.Add(strrdr.ReadLine());
                     
                 }
-                return res;
+                foreach(var x in res)
+                {
+                    bool title = true;
+                    string Title="", path="";
+                    for(int i = 0, n = x.Length; i < n; i++)
+                    {
+                        if (x[i]==' ')
+                        {
+                            title = false;
+                        }
+                        if (title)
+                        {
+                            Title += x[i];
+                        }
+                        else
+                        {
+                            path += x[i];
+                        }
+                    }
+                    music music = new music(Title, path);
+                    lm.Add(music);
+                }
+                
             }
-            return null;
+
+            return lm;
         }
     }
     

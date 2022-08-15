@@ -21,18 +21,18 @@ namespace music_manage
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        MediaPlayer player;
         public MainWindow()
         {
             player = new MediaPlayer();
             InitializeComponent();
-            
+            loadmusic();
         }
        
         List<music> listmusic = new List<music>();
         void Addmusicbt_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Bạn muốn tìm nhạc ở đâu ?", "file location");
+            MessageBox.Show("where are your music ?", "find music");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -70,15 +70,26 @@ namespace music_manage
 
 
         }
-        MediaPlayer player;
+        public void loadmusic()
+        {
+            List<music> musics = savesystem.LoadPathMusic();
+            
+        }
         public void musiclvclick(object sender, RoutedEventArgs e)
         {
+            //lay ra path tu listviewitems
+
+
+
+            //dung path de phat nhac 
             string stringuri = "F:\\MWSPr\\music_manage\\Nhac\\5774870.mp3";
 
             Uri source = new Uri(stringuri);
             player.Open(source);
             
             player.Play();
+            //goi UIupdate cua tab Playing
+
         }
         public void exit(object sender, RoutedEventArgs e)
         {
