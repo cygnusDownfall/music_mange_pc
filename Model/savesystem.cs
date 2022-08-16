@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace music_manage.Model
@@ -62,6 +60,10 @@ namespace music_manage.Model
             }
 
             return lm;
+        }
+        public static List<music> LoadMusicfromFolder()
+        {
+            return null;
         }
     }
     

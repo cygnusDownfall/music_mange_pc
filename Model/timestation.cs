@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace music_manage.Model
 {
@@ -15,7 +13,9 @@ namespace music_manage.Model
 
         }
     }
-    public class timestationcontroller { 
+    public class timestation_manager
+    {
+        List<timestation>? timestations;
         public void Travel(timestation timestation)
         {
 
@@ -25,11 +25,14 @@ namespace music_manage.Model
     {
         public string Path;
         public string Title;
-        public music(string title,string path)
+        public music(string title, string path)
         {
             Path = path;
             Title = title;
         }
+    }
+    public class music_manager //model quan trong nhat
+    {
 
     }
 }

@@ -1,5 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    x:Class="music_manage.Model.mainresourcedictionary"
+                    x:ClassModifier="public">
     <Style x:Key="mediaplaybt" TargetType="Button">
         <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="50"/>
@@ -20,16 +22,19 @@
     <Style x:Key="exitbt" TargetType="Button">
         <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="80"/>
-        <Setter Property="Background" Value="Blue"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderThickness" Value="5"/>
-        <Setter Property="BorderBrush"  Value="Gray"/>
+        <Setter Property="BorderBrush"  Value="{x:Null}"/>
         <Setter Property="FontSize" Value="40"/>
         <Setter Property="Content" Value="X"/>
+        <EventSetter Event="Click" Handler="exit"/>
     </Style>
     
     <Style x:Key="lvmusicitems" TargetType="ListViewItem">
         <Setter Property="Height" Value="150"/>
-        <Setter Property="Width" Value="1000"/>
+        <Setter Property="Width" Value="auto"/>
         <Setter Property="BorderThickness" Value="10"/>
         <Setter Property="BorderBrush"  Value="Black"/>
         <Setter Property="FontSize" Value="80"/>
@@ -44,6 +49,7 @@
             </Setter.Value>
         </Setter>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalAlignment"  Value="Stretch"/>
     </Style>
     <Style x:Key="lvmusic" TargetType="ListView">
         <Setter Property="Grid.Column" Value="0"/>

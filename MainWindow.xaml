@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:music_manage"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1200" Width="1500"
-        WindowStyle="None">
+        Title="MainWindow" Height="1000" Width="1200"
+        >
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -16,17 +16,16 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid Style="{StaticResource mainwindow}">
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Width="auto" Height="auto"   
-                    HorizontalAlignment="Center"
+                    HorizontalAlignment="Stretch"
                     Grid.Column="1">
             <Grid Height="80" Background="SlateGray">
                 <Button Style="{StaticResource exitbt}"
-                        Margin="890,0,0,0" 
-                        Click="exit" HorizontalAlignment="Left"
                         />
             </Grid>
             <StackPanel Width="700" Height="600" x:Name="playermedia" Visibility="Collapsed">
@@ -46,17 +45,15 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
                 <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >
-                    <ListViewItem Style="{StaticResource lvmusicitems}">
-                        <Button Content="+          Add Your Music" Background="{x:Null}"
-                                HorizontalContentAlignment="Left"
-                                Click="Addmusicbt_Click" Width="900"/>
+                    <ListViewItem Style="{StaticResource lvmusicitems}" MouseDoubleClick="Addmusicbt_Click">
+                        +  Add Your Music
                     </ListViewItem>
                 </ListView>
                 <ScrollViewer Grid.Column="1" >
 
                 </ScrollViewer>
             </Grid>
-            
+
 
         </StackPanel>
         <Border BorderBrush="Azure" 

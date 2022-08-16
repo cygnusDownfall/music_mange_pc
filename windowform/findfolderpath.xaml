@@ -7,19 +7,48 @@
         mc:Ignorable="d"
         WindowStyle="None"
         Background="{x:Null}"
-        Title="findfolderpath" Height="200" Width="500">
+        Title="findfolderpath" Height="250" Width="500">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="\resource\resourcedic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Border BorderBrush="Bisque" 
                 BorderThickness="10" 
                 CornerRadius="20"
                 Background="White"
                 VerticalAlignment="Stretch">
-            <DockPanel HorizontalAlignment="Stretch">
-                <TextBlock Text="Where are your music?"
-                       FontSize="30"/>
-                <TextBox x:Name="musicsfolderlocations"></TextBox>
-                <Button Content="Cancel" VerticalAlignment="Bottom"/>
-            </DockPanel>
+            <StackPanel HorizontalAlignment="Stretch">
+                <Grid>
+                    <TextBlock Text="Where are your music?"
+                           FontSize="30"
+                           Height="80"
+                           VerticalAlignment="Top"/>
+                    <Button Style="{StaticResource exitbt}"
+                            />
+                </Grid>
+                
+                <TextBlock Text="Copy your folder location path:"
+                           FontSize="20"
+                           Height="30"
+                           VerticalAlignment="Top"
+                           />
+                <TextBox x:Name="musicsfolderlocations"
+                         VerticalAlignment="Center"
+                         
+                         >
+                </TextBox>
+                <Button Content="Cancel" 
+                        VerticalAlignment="Bottom"
+                        Margin="0,10,0,0"/>
+                <Button Content="OK" 
+                        VerticalAlignment="Bottom"
+                        Margin="0,10,0,0" Click="Button_Click"/>
+            </StackPanel>
+            
 
         </Border>
     </Grid>

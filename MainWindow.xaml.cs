@@ -104,10 +104,7 @@ namespace music_manage
             //goi UIupdate cua tab Playing
 
         }
-        public void exit(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
+       
         public void playmedia(object sender, RoutedEventArgs e)
         {
 
