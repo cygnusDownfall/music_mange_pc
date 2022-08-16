@@ -52,7 +52,7 @@ namespace music_manage.Model {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/music_manage;component/resource/resourcedic.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/music_manage;V1.0.0.0;component/resource/resourcedic.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\resource\resourcedic.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

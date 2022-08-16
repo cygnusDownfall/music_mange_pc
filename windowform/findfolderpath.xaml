@@ -36,11 +36,12 @@
                            Height="30"
                            VerticalAlignment="Top"
                            />
-                <TextBox x:Name="musicsfolderlocations"
-                         VerticalAlignment="Center"
-                         
-                         >
-                </TextBox>
+
+                <StackPanel  x:Name="musicsfolderlocations">
+                    <TextBox/>
+                    <Button Content="+" Click="addfolderpathtextbox"/>
+                </StackPanel>
+
                 <Button Content="Cancel" 
                         VerticalAlignment="Bottom"
                         Margin="0,10,0,0"/>

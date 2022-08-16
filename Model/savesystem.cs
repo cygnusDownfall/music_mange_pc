@@ -61,8 +61,12 @@ namespace music_manage.Model
 
             return lm;
         }
-        public static List<music> LoadMusicfromFolder()
+        public static List<music> LoadMusicfromFolder(List<string> stringfolderpaths)
         {
+            //xu li 
+
+
+
             return null;
         }
     }

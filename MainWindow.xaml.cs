@@ -28,7 +28,25 @@ namespace music_manage
             findfolderpath findwindow = new findfolderpath();
             findwindow.ShowDialog();
         }
+        void AddmusicEvent(object sender,eventsendpath e)
+        {
+            List<music> res= savesystem.LoadMusicfromFolder(e.Folderpath);
+            foreach(var x in res)
+            {
+                // lieu no co nhan dien dc music?
+                if (listmusic.Contains(x))
+                {
+                    continue;
+                }
+                else
+                {
+                    listmusic.Add(x);
+                }
+                
+            }
 
+        }
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
