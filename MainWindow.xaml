@@ -5,20 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:music_manage"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1200" Width="1000"
+        Title="MainWindow" Height="1200" Width="1500"
         WindowStyle="None">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="resource\resourcedic.xaml"/>
-
+                <!--     -->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-
-
     </Window.Resources>
-    <Grid Background="Black">
-        <StackPanel Width="auto" Height="auto"   HorizontalAlignment="Center">
+    <Grid Style="{StaticResource mainwindow}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Width="auto" Height="auto"   
+                    HorizontalAlignment="Center"
+                    Grid.Column="1">
             <Grid Height="80" Background="SlateGray">
                 <Button Style="{StaticResource exitbt}"
                         Margin="890,0,0,0" 
@@ -36,7 +40,7 @@
                     <Button Width="100" Height="50"/>
                 </StackPanel>
             </StackPanel>
-            <Grid x:Name="listmusicgr"  HorizontalAlignment="Stretch">
+            <Grid x:Name="listmusicgr"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="19*"/>
                     <ColumnDefinition Width="1*"/>
@@ -44,30 +48,35 @@
                 <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >
                     <ListViewItem Style="{StaticResource lvmusicitems}">
                         <Button Content="+          Add Your Music" Background="{x:Null}"
-                                
                                 HorizontalContentAlignment="Left"
                                 Click="Addmusicbt_Click" Width="900"/>
-
                     </ListViewItem>
                 </ListView>
                 <ScrollViewer Grid.Column="1" >
 
                 </ScrollViewer>
             </Grid>
-            <Border BorderBrush="Azure" BorderThickness="10" CornerRadius="10" Padding="0,0,0,0">
-                <StackPanel x:Name="tab" 
-                        HorizontalAlignment="Left"  
-                        VerticalAlignment="Center"
-                        Orientation="Horizontal"
-                        >
-
-                    <Button x:Name="Playing" Content="Playing" Style="{StaticResource tabbt}" />
-                    <Button x:Name="MyMusic" Content="My Music" Style="{StaticResource tabbt}" Click="changetotablistmusic"/>
-                    <Button x:Name="Detail" Content="Detail" Style="{StaticResource tabbt}"/>
-                    <Button x:Name="Lyric" Content="Lyric" Style="{StaticResource tabbt}"/>
-                </StackPanel>
-            </Border>
+            
 
         </StackPanel>
+        <Border BorderBrush="Azure" 
+                BorderThickness="10" 
+                Background="Azure"
+                CornerRadius="10" 
+                Padding="0,0,0,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Grid.Column="0">
+            <StackPanel x:Name="tab" Width="auto"
+                        VerticalAlignment="Top"
+                        
+                        >
+
+                <Button x:Name="MyMusic" Content="My Music" Style="{StaticResource tabbt}" Click="changetotablistmusic"/>
+                <Button x:Name="Playing" Content="Playing" Style="{StaticResource tabbt}" Click="changetotablistmusic"/>
+                <Button x:Name="Detail" Content="Detail" Style="{StaticResource tabbt}" Click="changetotablistmusic"/>
+                <Button x:Name="Lyric" Content="Lyric" Style="{StaticResource tabbt}" Click="changetotablistmusic"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

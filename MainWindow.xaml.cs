@@ -1,18 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using music_manage.Model;
+using music_manage.windowform;
 
 namespace music_manage
 {
@@ -22,6 +14,7 @@ namespace music_manage
     public partial class MainWindow : Window
     {
         MediaPlayer player;
+        List<music> listmusic;
         public MainWindow()
         {
             player = new MediaPlayer();
@@ -29,10 +22,11 @@ namespace music_manage
             loadmusic();
         }
        
-        List<music> listmusic = new List<music>();
+        
         void Addmusicbt_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("where are your music ?", "find music");
+            findfolderpath findwindow = new findfolderpath();
+            findwindow.ShowDialog();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -70,24 +64,43 @@ namespace music_manage
 
 
         }
+        void updateUIlistmusics()
+        {
+            for(int i=0,n=listmusic.Count;i<n;i++)
+            {
+                ListViewItem musicUI = new ListViewItem();
+                musicUI.Tag = i;
+                musicUI.Content = listmusic[i].Title;
+            }
+        }
         public void loadmusic()
         {
-            List<music> musics = savesystem.LoadPathMusic();
-            
+            listmusic = savesystem.LoadPathMusic();
+            updateUIlistmusics();
         }
         public void musiclvclick(object sender, RoutedEventArgs e)
         {
-            //lay ra path tu listviewitems
+            //lay ra path tu listviewitems thong qua Tag 
+            ListViewItem? musicUI=sender as ListViewItem;
 
 
+            //dung path de phat nhac  
+            string stringuri="";
+            if (musicUI != null)
+            {
+                stringuri = listmusic[Convert.ToInt32(musicUI.Tag)].Path; //"F:\\MWSPr\\music_manage\\Nhac\\5774870.mp3";
 
-            //dung path de phat nhac 
-            string stringuri = "F:\\MWSPr\\music_manage\\Nhac\\5774870.mp3";
+                Uri source = new Uri(stringuri);
+                player.Open(source);
 
-            Uri source = new Uri(stringuri);
-            player.Open(source);
-            
-            player.Play();
+                player.Play();
+            }
+            else
+            {
+                MessageBox.Show("Loi string Uri !!!");
+            }
+
+           
             //goi UIupdate cua tab Playing
 
         }

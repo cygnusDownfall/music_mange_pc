@@ -1,0 +1,26 @@
+﻿<Window x:Class="music_manage.windowform.findfolderpath"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:music_manage.windowform"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="{x:Null}"
+        Title="findfolderpath" Height="200" Width="500">
+    <Grid>
+        <Border BorderBrush="Bisque" 
+                BorderThickness="10" 
+                CornerRadius="20"
+                Background="White"
+                VerticalAlignment="Stretch">
+            <DockPanel HorizontalAlignment="Stretch">
+                <TextBlock Text="Where are your music?"
+                       FontSize="30"/>
+                <TextBox x:Name="musicsfolderlocations"></TextBox>
+                <Button Content="Cancel" VerticalAlignment="Bottom"/>
+            </DockPanel>
+
+        </Border>
+    </Grid>
+</Window>

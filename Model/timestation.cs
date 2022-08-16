@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,8 +23,8 @@ namespace music_manage.Model
     }
     public class music
     {
-        string Path { get; set; }
-        string Title { get; set; }
+        public string Path;
+        public string Title;
         public music(string title,string path)
         {
             Path = path;

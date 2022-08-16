@@ -23,3 +23,5 @@ F:\MWSPr\music_manage\obj\Debug\net6.0-windows\music_manage.pdb
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\music_manage.genruntimeconfig.cache
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\ref\music_manage.dll
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\resource\resourcedic.baml
+F:\MWSPr\music_manage\obj\Debug\net6.0-windows\windowform\findfolderpath.g.cs
+F:\MWSPr\music_manage\obj\Debug\net6.0-windows\windowform\findfolderpath.baml

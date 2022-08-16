@@ -10,6 +10,9 @@
     <Compile Update="travelmainboard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="windowform\findfolderpath.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -19,6 +22,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="travelmainboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="windowform\findfolderpath.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
