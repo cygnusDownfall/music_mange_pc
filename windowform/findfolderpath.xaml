@@ -9,11 +9,7 @@
         Background="{x:Null}"
         Title="findfolderpath" Height="250" Width="500">
     <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="\resource\resourcedic.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        
     </Window.Resources>
     
     <Grid>

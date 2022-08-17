@@ -25,7 +25,7 @@ namespace music_manage.Model
                 {
                     case "Playing":
                         {
-
+                            
                             break;
                         }
                     case "MyMusic":
