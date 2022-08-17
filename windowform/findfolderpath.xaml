@@ -34,10 +34,10 @@
                            VerticalAlignment="Top"
                            />
 
-                <ListBox  x:Name="musicsfolderlocations">
-                    <TextBox Width="356"/>
+                <StackPanel x:Name="musicsfolderlocations">
+                    <TextBox />
                     <Button Content="+" Click="addfolderpathtextbox"/>
-                </ListBox>
+                </StackPanel>
 
                 <Button Content="Cancel" 
                         VerticalAlignment="Bottom"

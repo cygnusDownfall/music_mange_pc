@@ -47,6 +47,7 @@ namespace music_manage
                 }
                 
             }
+            updateUIlistmusics();
 
         }
         

@@ -12,7 +12,7 @@ namespace music_manage.windowform
     {
         List<string> folderpath = new List<string>();
         public event EventHandler<eventsendpath> eventhandle;
-        public findfolderpath()=> InitializeComponent();
+        public findfolderpath() => InitializeComponent();
 
         protected virtual void sendlistfolderpath(eventsendpath e)
         {
@@ -22,13 +22,35 @@ namespace music_manage.windowform
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            foreach (var x in musicsfolderlocations.Children)
+            {
+                try
+                {
+                    System.Windows.Controls.TextBox? textBox=x as System.Windows.Controls.TextBox;
+                    if (textBox != null)
+                    {
+                        folderpath.Add(textBox.Text);
+                    }
+                    
+                }
+                catch
+                {
+
+                }
+
+            }
+            //MessageBox.Show(folderpath.ToString()); da xong
             sendlistfolderpath(new eventsendpath(folderpath));
+            Application.Current.Shutdown();
         }
         void addfolderpathtextbox(object sender, RoutedEventArgs e)
         {
-            //close this tab
-            Application.Current.Shutdown();
+            System.Windows.Controls.TextBox textBox = new System.Windows.Controls.TextBox();
+            textBox.Tag = "path";
+
+            musicsfolderlocations.Children.Add(textBox);
+
         }
-        
+
     }
 }

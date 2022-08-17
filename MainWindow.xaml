@@ -42,9 +42,7 @@
                         +  Add Your Music
                     </ListViewItem>
                 </ListView>
-                <ScrollViewer Grid.Column="1" >
-
-                </ScrollViewer>
+                
             </Grid>
             
         </StackPanel>
