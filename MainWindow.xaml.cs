@@ -18,7 +18,9 @@ namespace music_manage
         public MainWindow()
         {
             player = new MediaPlayer();
+
             InitializeComponent();
+
             loadmusic();
         }
        
@@ -27,8 +29,9 @@ namespace music_manage
         {
             findfolderpath findwindow = new findfolderpath();
             findwindow.ShowDialog();
+            findwindow.eventhandle += AddmusicEvent;
         }
-        void AddmusicEvent(object sender,eventsendpath e)
+        public void AddmusicEvent(object? sender,eventsendpath e)
         {
             List<music> res= savesystem.LoadMusicfromFolder(e.Folderpath);
             foreach(var x in res)
@@ -51,37 +54,7 @@ namespace music_manage
         {
 
         }
-        public void changetotablistmusic(object sender, RoutedEventArgs e)
-        {
-            Button? tabbt = sender as Button;
-            //ten cua cac button  dc dat lan luot theo cac tab Playing,MyMusic,Detail,Lyric
-            if (tabbt != null)
-            {
-                switch (tabbt.Name)
-                {
-                    case "Playing":
-                        {
-
-                            break;
-                        }
-                    case "MyMusic":
-                        {
-
-                            break;
-                        }
-                    case "Detail":
-                        {
-                            break;
-                        }
-                    case "Lyric":
-                        {
-                            break;
-                        }
-                }
-            }
-
-
-        }
+        
         void updateUIlistmusics()
         {
             for(int i=0,n=listmusic.Count;i<n;i++)
@@ -99,7 +72,7 @@ namespace music_manage
         public void musiclvclick(object sender, RoutedEventArgs e)
         {
             //lay ra path tu listviewitems thong qua Tag 
-            ListViewItem? musicUI=sender as ListViewItem;
+            ListViewItem? musicUI= sender as ListViewItem;
 
 
             //dung path de phat nhac  

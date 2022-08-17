@@ -10,24 +10,25 @@ namespace music_manage.windowform
     /// </summary>
     public partial class findfolderpath : Window
     {
+        List<string> folderpath = new List<string>();
         public event EventHandler<eventsendpath> eventhandle;
         public findfolderpath()=> InitializeComponent();
 
         protected virtual void sendlistfolderpath(eventsendpath e)
         {
-            EventHandler<eventsendpath> sendpath = eventhandle;
+            EventHandler<eventsendpath> sendpath = eventhandle;// null?
             sendpath.Invoke(this, e);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<string> folderpath = new List<string>();
-            
             sendlistfolderpath(new eventsendpath(folderpath));
         }
         void addfolderpathtextbox(object sender, RoutedEventArgs e)
         {
-
+            //close this tab
+            Application.Current.Shutdown();
         }
+        
     }
 }

@@ -16,11 +16,11 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid Style="{StaticResource mainwindow}">
-        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+
         <StackPanel Width="auto" Height="auto"   
                     HorizontalAlignment="Stretch"
                     Grid.Column="1">
@@ -28,6 +28,7 @@
                 <Button Style="{StaticResource exitbt}"
                         />
             </Grid>
+
             <StackPanel Width="700" Height="600" x:Name="playermedia" Visibility="Collapsed">
                 <uc:travelmainboard Width="700"
                                     Height="500"/>
@@ -69,10 +70,10 @@
                         
                         >
 
-                <Button x:Name="MyMusic" Content="My Music" Style="{StaticResource tabbt}" Click="changetotablistmusic"/>
-                <Button x:Name="Playing" Content="Playing" Style="{StaticResource tabbt}" Click="changetotablistmusic"/>
-                <Button x:Name="Detail" Content="Detail" Style="{StaticResource tabbt}" Click="changetotablistmusic"/>
-                <Button x:Name="Lyric" Content="Lyric" Style="{StaticResource tabbt}" Click="changetotablistmusic"/>
+                <Button x:Name="MyMusic" Content="My Music" Style="{StaticResource tabbt}"/>
+                <Button x:Name="Playing" Content="Playing" Style="{StaticResource tabbt}"/>
+                <Button x:Name="Detail" Content="Detail" Style="{StaticResource tabbt}"/>
+                <Button x:Name="Lyric" Content="Lyric" Style="{StaticResource tabbt}"/>
             </StackPanel>
         </Border>
     </Grid>

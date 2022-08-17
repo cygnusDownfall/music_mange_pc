@@ -63,8 +63,19 @@ namespace music_manage.Model
         }
         public static List<music> LoadMusicfromFolder(List<string> stringfolderpaths)
         {
-            //xu li 
-
+            //input list<pathfolder>->output list<music>
+            List<music> result = new List<music>();
+            foreach(var x in stringfolderpaths)
+            {
+                DirectoryInfo directory = new DirectoryInfo(x);
+                FileInfo[] files = directory.GetFiles("*.txt");
+                foreach(var y in files)
+                {
+                    music music = new music(y.Name, y.FullName);
+                    result.Add(music);
+                }
+            }
+            
 
 
             return null;

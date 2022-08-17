@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:music_manage.windowform"
-        mc:Ignorable="d"
+        mc:Ignorable="d"   
         WindowStyle="None"
         Background="{x:Null}"
         Title="findfolderpath" Height="250" Width="500">
@@ -15,6 +15,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+    
     <Grid>
         <Border BorderBrush="Bisque" 
                 BorderThickness="10" 
@@ -37,10 +38,10 @@
                            VerticalAlignment="Top"
                            />
 
-                <StackPanel  x:Name="musicsfolderlocations">
-                    <TextBox/>
+                <ListBox  x:Name="musicsfolderlocations">
+                    <TextBox Width="356"/>
                     <Button Content="+" Click="addfolderpathtextbox"/>
-                </StackPanel>
+                </ListBox>
 
                 <Button Content="Cancel" 
                         VerticalAlignment="Bottom"
