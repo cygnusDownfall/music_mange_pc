@@ -17,7 +17,7 @@
         <Setter Property="BorderThickness" Value="5"/>
         <Setter Property="BorderBrush"  Value="White"/>
         <Setter Property="FontSize" Value="40"/>
-        <EventSetter Event="Click" Handler="changetab"/>
+        <!--<EventSetter Event="Click" Handler="changetab"/>-->
     </Style>
     
     <Style x:Key="exitbt" TargetType="Button">

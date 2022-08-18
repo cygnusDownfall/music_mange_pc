@@ -7,7 +7,7 @@
         mc:Ignorable="d"   
         WindowStyle="None"
         Background="{x:Null}"
-        Title="findfolderpath" Height="250" Width="500">
+        Title="findfolderpath" Height="auto" Width="500">
     <Window.Resources>
         
     </Window.Resources>
@@ -34,11 +34,12 @@
                            VerticalAlignment="Top"
                            />
 
-                <StackPanel x:Name="musicsfolderlocations">
-                    <TextBox />
-                    <Button Content="+" Click="addfolderpathtextbox"/>
+                <StackPanel x:Name="musicsfolderlocations"
+                            MaxHeight="150">
+                    <TextBox Margin="0,0,0,5"/>
+                   
                 </StackPanel>
-
+                <Button Content="+" Click="addfolderpathtextbox"/>
                 <Button Content="Cancel" 
                         VerticalAlignment="Bottom"
                         Margin="0,10,0,0"/>

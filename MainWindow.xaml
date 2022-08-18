@@ -56,14 +56,14 @@
                 VerticalAlignment="Stretch"
                 Grid.Column="0">
             <StackPanel x:Name="tab" Width="auto"
-                        VerticalAlignment="Top"
-                        
+                        VerticalAlignment="Top" Margin="0,72,0,0"
+                        HorizontalAlignment="Stretch"
                         >
 
-                <Button x:Name="MyMusic" Content="My Music" Style="{StaticResource tabbt}"/>
-                <Button x:Name="Playing" Content="Playing" Style="{StaticResource tabbt}"/>
-                <Button x:Name="Detail" Content="Detail" Style="{StaticResource tabbt}"/>
-                <Button x:Name="Lyric" Content="Lyric" Style="{StaticResource tabbt}"/>
+                <Button x:Name="MyMusic" Content="My Music" Style="{StaticResource tabbt}" Click="changetab"/>
+                <Button x:Name="Playing" Content="Playing" Style="{StaticResource tabbt}" Click="changetab"/>
+                <Button x:Name="Detail" Content="Detail" Style="{StaticResource tabbt}" Click="changetab"/>
+                <Button x:Name="Lyric" Content="Lyric" Style="{StaticResource tabbt}" Click="changetab"/>
             </StackPanel>
         </Border>
     </Grid>
