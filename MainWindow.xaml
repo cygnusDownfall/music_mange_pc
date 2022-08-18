@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:music_manage"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1000" Width="1200"
+        FontSize="30"
+        Title="MainWindow" Height="800" Width="1200"
         >
     <Window.Resources>
         
@@ -28,23 +29,48 @@
                 <uc:travelmainboard Width="700"
                                     Height="500"/>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10,10,10,10">
-                    <Button />
-                    <Button Width="100" Height="50" />
-                    <Button Width="100" Height="50" Click="Button_Click"/>
-                    <Button Width="100" Height="50"/>
-                    <Button Width="100" Height="50"/>
+                    <Border Style="{StaticResource borderplaymedia}">
+                        <Button Style="{StaticResource mediaplaybt}"/>
+                    </Border>
+                    <Border Style="{StaticResource borderplaymedia}">
+                        <Button Style="{StaticResource mediaplaybt}"/>
+                    </Border>
+                    <Border Style="{StaticResource borderplaymedia}">
+                        <Button Style="{StaticResource mediaplaybt}" Click="continueplay"/>
+
+                    </Border>
+                    <Border Style="{StaticResource borderplaymedia}">
+                        <Button Style="{StaticResource mediaplaybt}"/>
+                    </Border>
+                    <Border Style="{StaticResource borderplaymedia}">
+                        <Button Style="{StaticResource mediaplaybt}"/>
+                    </Border>
                 </StackPanel>
             </StackPanel>
-            <Grid x:Name="listmusicgr"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-               
-                <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >
-                    <ListViewItem Style="{StaticResource lvmusicitems}" MouseDoubleClick="Addmusicbt_Click">
-                        +  Add Your Music
-                    </ListViewItem>
-                </ListView>
+            <Grid x:Name="listmusicgr"  
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Stretch"
+                  MinHeight="650">
+                <Border Style="{StaticResource borderListmusic}">
+                    <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >
+
+                            <ListViewItem Style="{StaticResource lvmusicitems}" MouseDoubleClick="Addmusicbt_Click">
+                                +  Add Your Music
+                            </ListViewItem>
+
+
+                        </ListView>
+                    </ScrollViewer>
+                </Border>
                 
             </Grid>
-            
+            <Grid x:Name="Detailpanel" Visibility="Collapsed">
+                
+            </Grid>
+            <Grid x:Name="Lyricpanel" Visibility="Collapsed">
+                
+            </Grid>
         </StackPanel>
         
         <Border BorderBrush="Azure" 
@@ -60,10 +86,10 @@
                         HorizontalAlignment="Stretch"
                         >
 
-                <Button x:Name="MyMusic" Content="My Music" Style="{StaticResource tabbt}" Click="changetab"/>
-                <Button x:Name="Playing" Content="Playing" Style="{StaticResource tabbt}" Click="changetab"/>
-                <Button x:Name="Detail" Content="Detail" Style="{StaticResource tabbt}" Click="changetab"/>
-                <Button x:Name="Lyric" Content="Lyric" Style="{StaticResource tabbt}" Click="changetab"/>
+                <Button x:Name="MyMusic" Content="My Music" Style="{StaticResource tabbt}" Click="changetab" Tag="1"/>
+                <Button x:Name="Playing" Content="Playing" Style="{StaticResource tabbt}" Click="changetab" Tag="2"/>
+                <Button x:Name="Detail" Content="Detail" Style="{StaticResource tabbt}" Click="changetab" Tag="3"/>
+                <Button x:Name="Lyric" Content="Lyric" Style="{StaticResource tabbt}" Click="changetab" Tag="4"/>
             </StackPanel>
         </Border>
     </Grid>

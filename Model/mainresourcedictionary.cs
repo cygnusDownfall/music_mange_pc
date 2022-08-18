@@ -16,10 +16,6 @@ namespace music_manage.Model
         {
             Application.Current.Shutdown();
         }
-        public void changetab(object sender, RoutedEventArgs e)
-        {
-            
-
-        }
+       
     }
 }

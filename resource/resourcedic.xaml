@@ -5,18 +5,42 @@
     <Style x:Key="mediaplaybt" TargetType="Button">
         <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="50"/>
-        <Setter Property="Background" Value="DarkViolet"/>
-        <Setter Property="BorderThickness" Value="10"/>
-        <Setter Property="BorderBrush"  Value="LimeGreen"/>
+        <Setter Property="Background" Value="Orange"/>
+        
+        
+
     </Style>
-    
+    <Style x:Key="borderplaymedia" TargetType="Border">
+        <Setter Property="Margin" Value="5,5,5,5"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="LimeGreen" Offset="0.45"/>
+                    <GradientStop Color="DarkViolet" Offset="0.55"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="10"/>
+        <Setter Property="CornerRadius" Value="20"/>
+    </Style>
+    <Style x:Key="borderListmusic" TargetType="Border">
+        <Setter Property="Margin" Value="0,0,40,0"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Azure"  Offset="0.45"/>
+                    <GradientStop Color="Black" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="30"/>
+    </Style>
     <Style x:Key="tabbt" TargetType="Button">
         <Setter Property="Width" Value="auto"/>
         <Setter Property="Height" Value="125"/>
         <Setter Property="Background" Value="Blue"/>
-        <Setter Property="BorderThickness" Value="5"/>
-        <Setter Property="BorderBrush"  Value="White"/>
-        <Setter Property="FontSize" Value="40"/>
+
+        <Setter Property="FontSize" Value="20"/>
         <!--<EventSetter Event="Click" Handler="changetab"/>-->
     </Style>
     
@@ -28,7 +52,7 @@
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderThickness" Value="5"/>
         <Setter Property="BorderBrush"  Value="{x:Null}"/>
-        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="FontSize" Value="20"/>
         <Setter Property="Content" Value="X"/>
         <EventSetter Event="Click" Handler="exit"/>
     </Style>
@@ -36,9 +60,10 @@
     <Style x:Key="lvmusicitems" TargetType="ListViewItem">
         <Setter Property="Height" Value="150"/>
         <Setter Property="Width" Value="auto"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
         <Setter Property="BorderThickness" Value="10"/>
         <Setter Property="BorderBrush"  Value="Black"/>
-        <Setter Property="FontSize" Value="80"/>
+        <Setter Property="FontSize" Value="40"/>
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush Opacity="50" StartPoint="0,0" EndPoint="2,1" >

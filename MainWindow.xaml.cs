@@ -15,6 +15,7 @@ namespace music_manage
     {
         MediaPlayer player;
         List<music>? listmusic;
+        music currentplay;
         public MainWindow()
         {
             player = new MediaPlayer();
@@ -30,12 +31,53 @@ namespace music_manage
             findfolderpath findwindow = new findfolderpath();
             findwindow.ShowDialog();
             findwindow.eventhandle += AddmusicEvent;
+            updateUIlistmusics();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void continueplay(object sender, RoutedEventArgs e)
         {
 
         }
+        public void changetab(object sender, RoutedEventArgs e) // xong
+        {
+            Button? tab = sender as Button;
+            if (tab != null)
+                switch (tab.Tag)
+                {
+                    case "1":
+                        {
+                            listmusicgr.Visibility = Visibility.Visible;
+                            playermedia.Visibility = Visibility.Collapsed;
+                            Detailpanel.Visibility = Visibility.Collapsed;
+                            Lyricpanel.Visibility = Visibility.Collapsed;
+                            break;
+                        }
+                    case "2":
+                        {
+                            listmusicgr.Visibility = Visibility.Collapsed;
+                            playermedia.Visibility = Visibility.Visible;
+                            Detailpanel.Visibility = Visibility.Collapsed;
+                            Lyricpanel.Visibility = Visibility.Collapsed;
+                            break;
+                        }
+                    case "3":
+                        {
+                            listmusicgr.Visibility = Visibility.Collapsed;
+                            playermedia.Visibility = Visibility.Collapsed;
+                            Detailpanel.Visibility = Visibility.Visible;
+                            Lyricpanel.Visibility = Visibility.Collapsed;
+                            break;
+                        }
+                    case "4":
+                        {
+                            listmusicgr.Visibility = Visibility.Collapsed;
+                            playermedia.Visibility = Visibility.Collapsed;
+                            Detailpanel.Visibility = Visibility.Collapsed;
+                            Lyricpanel.Visibility = Visibility.Visible;
+                            break;
+                        }
+                }
 
+        }
         #endregion
         #region customevent
         public void AddmusicEvent(object? sender, eventsendpath e)
@@ -61,14 +103,20 @@ namespace music_manage
 
 
 
-        void updateUIlistmusics()
+        void updateUIlistmusics() // on
         {
-            for (int i = 0, n = listmusic.Count; i < n; i++)
+            if (listmusic != null)
             {
-                ListViewItem musicUI = new ListViewItem();
-                musicUI.Tag = i;
-                musicUI.Content = listmusic[i].Title;
+                for (int i = 0, n = listmusic.Count; i < n; i++)
+                {
+                    ListViewItem musicUI = new ListViewItem();
+                    musicUI.Tag = i;
+                    musicUI.Content = listmusic[i].Title;
+                    musicUI.Style = this.FindResource("lvmusicitems") as Style;
+                    listmusicgr.Children.Add(musicUI);
+                }
             }
+                
         }
         public void loadmusic()
         {
