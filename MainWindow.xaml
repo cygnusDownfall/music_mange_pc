@@ -29,8 +29,11 @@
                 <uc:travelmainboard Width="700"
                                     Height="500"/>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10,10,10,10">
-                        <Button  Style="{StaticResource previousmusic}"/>
-                        <Button Style="{StaticResource previousstation}"/>
+                    <Button  Style="{StaticResource previousmusic}">
+                        <Image Source="picture/next.png"/>
+                    </Button>
+
+                    <Button Style="{StaticResource previousstation}"/>
                         <Button Style="{StaticResource playpause}" Click="continueplay"/>
                         <Button Style="{StaticResource nextstation}"/>
                         <Button Style="{StaticResource nextmusic}"/>
@@ -41,14 +44,15 @@
                   VerticalAlignment="Stretch"
                   MinHeight="650">
                 <Border Style="{StaticResource borderListmusic}">
-                    <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <ScrollViewer HorizontalAlignment="Stretch" 
+                                  VerticalAlignment="Stretch"
+                                  >
                         <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >
 
                             <ListViewItem Style="{StaticResource lvmusicitems}" MouseDoubleClick="Addmusicbt_Click">
                                 +  Add Your Music
                             </ListViewItem>
-
-
+                            
                         </ListView>
                     </ScrollViewer>
                 </Border>

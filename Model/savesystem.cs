@@ -68,17 +68,17 @@ namespace music_manage.Model
             foreach(var x in stringfolderpaths)
             {
                 DirectoryInfo directory = new DirectoryInfo(x);
-                FileInfo[] files = directory.GetFiles("*.txt");
+                FileInfo[] files = directory.GetFiles("*.mp3");
                 foreach(var y in files)
                 {
                     music music = new music(y.Name, y.FullName);
                     result.Add(music);
                 }
             }
-            
 
 
-            return null;
+            System.Windows.MessageBox.Show(result[0].ToString());
+            return result;
         }
     }
     

@@ -41,7 +41,7 @@ namespace music_manage.windowform
             }
             //MessageBox.Show(folderpath.ToString()); da xong
             sendlistfolderpath(new eventsendpath(folderpath));
-            Application.Current.Shutdown();
+            this.Close();
         }
         void addfolderpathtextbox(object sender, RoutedEventArgs e)
         {

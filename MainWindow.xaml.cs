@@ -17,6 +17,7 @@ namespace music_manage
         bool isplayed = false;
         List<music>? listmusic;
         
+        
         music currentplay;
         public MainWindow()
         {
@@ -34,7 +35,7 @@ namespace music_manage
 
             findwindow.eventhandle += AddmusicEvent;
             findwindow.ShowDialog();
-            updateUIlistmusics();
+            
         }
         private void continueplay(object sender, RoutedEventArgs e)
         {
@@ -134,15 +135,15 @@ namespace music_manage
                     musicUI.Tag = i;
                     musicUI.Content = listmusic[i].Title;
                     musicUI.Style = this.FindResource("lvmusicitems") as Style;
-                    listmusicgr.Children.Add(musicUI);
+                    lvmusic.Items.Add(musicUI);
                 }
             }
-
+            
         }
         public void loadmusic()
         {
             listmusic = savesystem.LoadPathMusic();
-            updateUIlistmusics();
+            //updateUIlistmusics();
         }
 
     }

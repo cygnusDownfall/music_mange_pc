@@ -2,29 +2,58 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                     x:Class="music_manage.Model.mainresourcedictionary"
                     x:ClassModifier="public">
+    
+    <!--#region style of mediaplaybt-->
     <Style x:Key="mediaplaybt" TargetType="Button">
         <Setter Property="Width" Value="100"/>
-        <Setter Property="Height" Value="50"/>
-        <Setter Property="Background" Value="Orange"/>
-         
-        
-
+        <Setter Property="Height" Value="100"/>
+        <!--<Setter Property="Background" Value="White"/>-->
     </Style>
+    
     <Style x:Key="playpause" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
-        
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image Source="/picture/PlayUI.png" Width="100" Height="100"/>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="nextstation" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
-
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image Source="/picture/previousmove.png" Width="100" Height="100">
+                    <Image.LayoutTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Image.LayoutTransform>
+                </Image>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="previousstation" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
-
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image Source="/picture/previousmove.png" Width="100" Height="100"/>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="nextmusic" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
-
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image Source="/picture/next.png" Width="100" Height="100"/>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style x:Key="previousmusic" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
-
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image Source="/picture/next.png" Width="100" Height="100">
+                    <Image.LayoutTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Image.LayoutTransform>
+                </Image>
+            </Setter.Value>
+        </Setter>
     </Style>
+    <!--#endregion-->
     <Style x:Key="borderW" TargetType="Border">
         <Setter Property="Margin" Value="5,5,5,5"/>
         <Setter Property="BorderBrush">
