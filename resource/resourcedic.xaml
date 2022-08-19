@@ -6,11 +6,26 @@
         <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="50"/>
         <Setter Property="Background" Value="Orange"/>
-        
+         
         
 
     </Style>
-    <Style x:Key="borderplaymedia" TargetType="Border">
+    <Style x:Key="playpause" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
+        
+    </Style>
+    <Style x:Key="nextstation" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
+
+    </Style>
+    <Style x:Key="previousstation" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
+
+    </Style>
+    <Style x:Key="nextmusic" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
+
+    </Style>
+    <Style x:Key="previousmusic" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
+
+    </Style>
+    <Style x:Key="borderW" TargetType="Border">
         <Setter Property="Margin" Value="5,5,5,5"/>
         <Setter Property="BorderBrush">
             <Setter.Value>
@@ -41,7 +56,7 @@
         <Setter Property="Background" Value="Blue"/>
 
         <Setter Property="FontSize" Value="20"/>
-        <!--<EventSetter Event="Click" Handler="changetab"/>-->
+        
     </Style>
     
     <Style x:Key="exitbt" TargetType="Button">

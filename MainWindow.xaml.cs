@@ -13,8 +13,10 @@ namespace music_manage
     /// </summary>
     public partial class MainWindow : Window
     {
-        MediaPlayer player;
+        MediaPlayer player;//trinh phat nhac
+        bool isplayed = false;
         List<music>? listmusic;
+        
         music currentplay;
         public MainWindow()
         {
@@ -29,13 +31,32 @@ namespace music_manage
         void Addmusicbt_Click(object sender, RoutedEventArgs e)
         {
             findfolderpath findwindow = new findfolderpath();
-            findwindow.ShowDialog();
+
             findwindow.eventhandle += AddmusicEvent;
+            findwindow.ShowDialog();
             updateUIlistmusics();
         }
         private void continueplay(object sender, RoutedEventArgs e)
         {
+            if (!isplayed)
+            {
+                player.Clock.Controller.Resume();
+                
+            }
+            else
+            {
+                player.Clock.Controller.Pause();
+                player.Pause();
+            }
 
+        }
+        private void nextmusic(object sender, RoutedEventArgs e)
+        {
+            if (listmusic != null)
+            {
+                currentplay = listmusic[listmusic.IndexOf(currentplay) + 1];
+
+            }
         }
         public void changetab(object sender, RoutedEventArgs e) // xong
         {
@@ -116,7 +137,7 @@ namespace music_manage
                     listmusicgr.Children.Add(musicUI);
                 }
             }
-                
+
         }
         public void loadmusic()
         {

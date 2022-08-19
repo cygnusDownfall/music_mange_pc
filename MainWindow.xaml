@@ -29,22 +29,11 @@
                 <uc:travelmainboard Width="700"
                                     Height="500"/>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10,10,10,10">
-                    <Border Style="{StaticResource borderplaymedia}">
-                        <Button Style="{StaticResource mediaplaybt}"/>
-                    </Border>
-                    <Border Style="{StaticResource borderplaymedia}">
-                        <Button Style="{StaticResource mediaplaybt}"/>
-                    </Border>
-                    <Border Style="{StaticResource borderplaymedia}">
-                        <Button Style="{StaticResource mediaplaybt}" Click="continueplay"/>
-
-                    </Border>
-                    <Border Style="{StaticResource borderplaymedia}">
-                        <Button Style="{StaticResource mediaplaybt}"/>
-                    </Border>
-                    <Border Style="{StaticResource borderplaymedia}">
-                        <Button Style="{StaticResource mediaplaybt}"/>
-                    </Border>
+                        <Button  Style="{StaticResource previousmusic}"/>
+                        <Button Style="{StaticResource previousstation}"/>
+                        <Button Style="{StaticResource playpause}" Click="continueplay"/>
+                        <Button Style="{StaticResource nextstation}"/>
+                        <Button Style="{StaticResource nextmusic}"/>
                 </StackPanel>
             </StackPanel>
             <Grid x:Name="listmusicgr"  
