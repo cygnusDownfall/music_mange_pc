@@ -100,7 +100,11 @@
         <Setter Property="Content" Value="X"/>
         <EventSetter Event="Click" Handler="exit"/>
     </Style>
-    
+    <Style TargetType="ScrollViewer">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+    </Style>
     <Style x:Key="lvmusicitems" TargetType="ListViewItem">
         <Setter Property="Height" Value="150"/>
         <Setter Property="Width" Value="auto"/>

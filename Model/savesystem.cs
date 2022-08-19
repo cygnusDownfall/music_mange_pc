@@ -6,11 +6,11 @@ namespace music_manage.Model
 {
     public static class savesystem
     {
-        const string savefilepath = "";
+        private const string savefilepath = "/maindata/data.txt";
         public static void SavePathMusic(List<string> listpath)
         {
             
-            if (File.Exists(savefilepath))
+            if (!File.Exists(savefilepath))
             {
                 FileStream fileStream = new FileStream(savefilepath, FileMode.Create);
             }

@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Folder Include="font\" />
+    <Folder Include="NewFolder\" />
   </ItemGroup>
 
 </Project>

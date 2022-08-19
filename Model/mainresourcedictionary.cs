@@ -14,6 +14,7 @@ namespace music_manage.Model
 
         public void exit(object sender, RoutedEventArgs e)
         {
+            
             Application.Current.Shutdown();
         }
        

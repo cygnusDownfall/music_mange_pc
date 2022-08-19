@@ -16,8 +16,8 @@ namespace music_manage
         MediaPlayer player;//trinh phat nhac
         bool isplayed = false;
         List<music>? listmusic;
-        
-        
+
+
         music currentplay;
         public MainWindow()
         {
@@ -35,14 +35,14 @@ namespace music_manage
 
             findwindow.eventhandle += AddmusicEvent;
             findwindow.ShowDialog();
-            
+
         }
         private void continueplay(object sender, RoutedEventArgs e)
         {
             if (!isplayed)
             {
                 player.Clock.Controller.Resume();
-                
+
             }
             else
             {
@@ -59,7 +59,7 @@ namespace music_manage
 
             }
         }
-        public void changetab(object sender, RoutedEventArgs e) // xong
+        void changetab(object sender, RoutedEventArgs e) // xong
         {
             Button? tab = sender as Button;
             if (tab != null)
@@ -100,6 +100,15 @@ namespace music_manage
                 }
 
         }
+        private void MusicUI_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ListViewItem? listViewItem = sender as ListViewItem;
+            if (listmusic != null && listViewItem != null)
+            {
+                play(listmusic[Convert.ToInt32(listViewItem.Tag)].Path);
+            }
+        }
+
         #endregion
         #region customevent
         public void AddmusicEvent(object? sender, eventsendpath e)
@@ -127,6 +136,7 @@ namespace music_manage
 
         void updateUIlistmusics() // on
         {
+            lvmusic.Items.Clear();
             if (listmusic != null)
             {
                 for (int i = 0, n = listmusic.Count; i < n; i++)
@@ -135,16 +145,35 @@ namespace music_manage
                     musicUI.Tag = i;
                     musicUI.Content = listmusic[i].Title;
                     musicUI.Style = this.FindResource("lvmusicitems") as Style;
+                    musicUI.MouseDoubleClick += MusicUI_MouseDoubleClick;
                     lvmusic.Items.Add(musicUI);
                 }
             }
-            
+
         }
-        public void loadmusic()
+
+        void play(string path)
+        {
+            player.Open(new Uri(path));
+            player.Play();
+
+        }
+
+        void loadmusic()
         {
             listmusic = savesystem.LoadPathMusic();
             //updateUIlistmusics();
         }
 
+        private void Window_Deactivated(object sender, EventArgs e)
+        {
+            List<string> datasave = new List<string>();
+            if(listmusic!=null)
+            foreach(var x in listmusic)
+            {
+                    datasave.Add(x.Path);
+            }
+            savesystem.SavePathMusic(datasave);
+        }
     }
 }
