@@ -45,7 +45,7 @@
                   VerticalAlignment="Stretch"
                   MinHeight="650">
                 <Border Style="{StaticResource borderListmusic}">
-                    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <ScrollViewer Style="{StaticResource scrollview}">
                         <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >
 
                             <ListViewItem Style="{StaticResource lvmusicitems}" MouseDoubleClick="Addmusicbt_Click">

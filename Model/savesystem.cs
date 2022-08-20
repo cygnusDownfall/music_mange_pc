@@ -6,10 +6,10 @@ namespace music_manage.Model
 {
     public static class savesystem
     {
-        private const string savefilepath = "/maindata/data.txt";
+        
         public static void SavePathMusic(List<string> listpath)
         {
-            
+            string savefilepath = AppDomain.CurrentDomain.BaseDirectory.ToString() + "/maindata/data.txt";
             if (!File.Exists(savefilepath))
             {
                 FileStream fileStream = new FileStream(savefilepath, FileMode.Create);
@@ -24,6 +24,7 @@ namespace music_manage.Model
         }
         public static List<music> LoadPathMusic()
         {
+            string savefilepath = AppDomain.CurrentDomain.BaseDirectory.ToString() + "/maindata/data.txt";
             List<music> lm = new List<music>();
             if (File.Exists(savefilepath))
             {
