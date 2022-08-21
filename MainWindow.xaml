@@ -26,7 +26,10 @@
                         />
             </Grid>
 
-            <StackPanel Width="700" Height="600" x:Name="playermedia" Visibility="Collapsed">
+            <StackPanel Width="700" 
+                        Height="600" 
+                        x:Name="playermedia" 
+                        Visibility="Collapsed">
                 <uc:travelmainboard Width="700"
                                     Height="500"/>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10,10,10,10">
@@ -46,14 +49,18 @@
                   Height="650"
                   >
                 <Border Style="{StaticResource borderListmusic}">
-                    <ScrollViewer Style="{StaticResource scrollview}">
-                        <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >
+                    
+                    <ScrollViewer Style="{StaticResource scrollview}" x:Name="scrvw">
+                        
+                            <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >
 
-                            <ListViewItem Style="{StaticResource lvmusicitems}" MouseDoubleClick="Addmusicbt_Click">
-                                +  Add Your Music
-                            </ListViewItem>
+                                <ListViewItem Style="{StaticResource lvmusicitems}" MouseDoubleClick="Addmusicbt_Click">
+                                    +  Add Your Music
+                                </ListViewItem>
 
-                        </ListView>
+                            </ListView>
+                        
+                        
                     </ScrollViewer>
                 </Border>
 

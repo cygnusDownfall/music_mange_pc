@@ -67,13 +67,17 @@ namespace music_manage.Model
             List<music> result = new List<music>();
             foreach(var x in stringfolderpaths)
             {
-                DirectoryInfo directory = new DirectoryInfo(x);
-                FileInfo[] files = directory.GetFiles("*.mp3");
-                foreach(var y in files)
+                if (x != "")
                 {
-                    music music = new music(y.Name, y.FullName);
-                    result.Add(music);
+                    DirectoryInfo directory = new DirectoryInfo(x);
+                    FileInfo[] files = directory.GetFiles("*.mp3");
+                    foreach (var y in files)
+                    {
+                        music music = new music(y.Name, y.FullName);
+                        result.Add(music);
+                    }
                 }
+                
             }
 
 
