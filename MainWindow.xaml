@@ -43,7 +43,8 @@
             <Grid x:Name="listmusicgr"  
                   HorizontalAlignment="Stretch" 
                   VerticalAlignment="Stretch"
-                  MinHeight="650">
+                  Height="650"
+                  >
                 <Border Style="{StaticResource borderListmusic}">
                     <ScrollViewer Style="{StaticResource scrollview}">
                         <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >

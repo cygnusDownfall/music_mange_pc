@@ -9,7 +9,7 @@ namespace music_manage.Model
         
         public static void SavePathMusic(List<string> listpath)
         {
-            string savefilepath = AppDomain.CurrentDomain.BaseDirectory.ToString() + "/maindata/data.txt";
+            string savefilepath = AppDomain.CurrentDomain.BaseDirectory.ToString() + "data.txt";
             if (!File.Exists(savefilepath))
             {
                 FileStream fileStream = new FileStream(savefilepath, FileMode.Create);
@@ -24,16 +24,15 @@ namespace music_manage.Model
         }
         public static List<music> LoadPathMusic()
         {
-            string savefilepath = AppDomain.CurrentDomain.BaseDirectory.ToString() + "/maindata/data.txt";
+            string savefilepath = AppDomain.CurrentDomain.BaseDirectory.ToString() + "data.txt";
             List<music> lm = new List<music>();
             if (File.Exists(savefilepath))
             {
                 List<string> res = new List<string>();
-                StreamReader strrdr = new StreamReader(savefilepath);
-                while (true)
+                
+                foreach(string x in File.ReadAllLines(savefilepath))
                 {
-                    res.Add(strrdr.ReadLine());
-                    
+                    res.Add(x);
                 }
                 foreach(var x in res)
                 {
