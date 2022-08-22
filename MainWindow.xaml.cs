@@ -165,15 +165,6 @@ namespace music_manage
             //updateUIlistmusics();
         }
 
-        private void Window_Deactivated(object sender, EventArgs e)
-        {
-            List<string> datasave = new List<string>();
-            if(listmusic!=null)
-            foreach(var x in listmusic)
-            {
-                    datasave.Add(x.Path);
-            }
-            savesystem.SavePathMusic(datasave);
-        }
+        
     }
 }

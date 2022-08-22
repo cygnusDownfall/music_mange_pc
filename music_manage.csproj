@@ -15,6 +15,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ApplicationDefinition Remove="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="resource\next.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="App.xaml" />
+    <Resource Include="resource\next.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="font\" />
   </ItemGroup>
 

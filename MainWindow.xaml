@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         FontSize="30"
         Title="MainWindow" Height="800" Width="1200"
-        Deactivated="Window_Deactivated"
         >
     <Window.Resources>
 
