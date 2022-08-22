@@ -1,10 +1,10 @@
-﻿using System;
+﻿using music_manage.Model;
+using music_manage.windowform;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using music_manage.Model;
-using music_manage.windowform;
 
 namespace music_manage
 {
@@ -56,6 +56,29 @@ namespace music_manage
             if (listmusic != null)
             {
                 currentplay = listmusic[listmusic.IndexOf(currentplay) + 1];
+                play();
+            }
+        }
+        private void nextstation(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void previousstation(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void previousmusic(object sender, RoutedEventArgs e)
+        {
+
+            if (listmusic != null)
+            {
+                int id = listmusic.IndexOf(currentplay);
+                if (id != 1)
+                {
+                    currentplay = listmusic[id - 1];
+                    play();
+                }
+
 
             }
         }
@@ -105,7 +128,8 @@ namespace music_manage
             ListViewItem? listViewItem = sender as ListViewItem;
             if (listmusic != null && listViewItem != null)
             {
-                play(listmusic[Convert.ToInt32(listViewItem.Tag)].Path);
+                currentplay = listmusic[Convert.ToInt32(listViewItem.Tag)];
+                play();
                 isplayed = true;
             }
         }
@@ -153,9 +177,10 @@ namespace music_manage
 
         }
 
-        void play(string path)
+        void play() 
         {
-            player.Open(new Uri(path));
+            //play the currentplay music 
+            player.Open(new Uri(currentplay.Path));
             player.Play();
 
         }
@@ -166,6 +191,6 @@ namespace music_manage
             //updateUIlistmusics();
         }
 
-        
+
     }
 }
