@@ -2,18 +2,29 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                     x:Class="music_manage.Model.mainresourcedictionary"
                     x:ClassModifier="public">
-    
+    <!--#region solidcolorbrush-->
+    <SolidColorBrush x:Key="melonMelody" Color="#f8c291"/>
+
+    <!--#endregion-->
+    <!--#region LinearGradientBrush-->
+    <LinearGradientBrush x:Key="W" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="LimeGreen" Offset="0.45"/>
+        <GradientStop Color="DarkViolet" Offset="0.55"/>
+    </LinearGradientBrush>
+    <!--#endregion-->
     <!--#region style of mediaplaybt-->
     <Style x:Key="mediaplaybt" TargetType="Button">
         <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="100"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="Margin" Value="10,10,10,10"/>
         <!--<Setter Property="Background" Value="White"/>-->
     </Style>
     
     <Style x:Key="playpause" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
         <Setter Property="Content">
             <Setter.Value>
-                <Image Source="/picture/PlayUI.png" Width="100" Height="100"/>
+                <Image Source="/picture/PlayUI.png" Width="100" Height="100" />
             </Setter.Value>
         </Setter>
     </Style>
@@ -56,14 +67,7 @@
     <!--#endregion-->
     <Style x:Key="borderW" TargetType="Border">
         <Setter Property="Margin" Value="5,5,5,5"/>
-        <Setter Property="BorderBrush">
-            <Setter.Value>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="LimeGreen" Offset="0.45"/>
-                    <GradientStop Color="DarkViolet" Offset="0.55"/>
-                </LinearGradientBrush>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="BorderBrush" Value="{StaticResource W}"/>
         <Setter Property="BorderThickness" Value="10"/>
         <Setter Property="CornerRadius" Value="20"/>
     </Style>
@@ -105,6 +109,7 @@
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="VerticalScrollBarVisibility"  Value="Auto"/>
+        
     </Style>
     <Style x:Key="lvmusicitems" TargetType="ListViewItem">
         <Setter Property="Height" Value="150"/>

@@ -7,7 +7,7 @@ namespace music_manage.Model
     public static class savesystem
     {
         
-        public static void SavePathMusic(List<string> listpath)
+        public static void SavePathMusic(List<music> listmusic)
         {
             string savefilepath = AppDomain.CurrentDomain.BaseDirectory.ToString() + "data.txt";
             if (!File.Exists(savefilepath))
@@ -16,9 +16,10 @@ namespace music_manage.Model
             }
             
             StreamWriter strwrt = new StreamWriter(savefilepath);
-            foreach(string x in listpath)
+            foreach(var x in listmusic)
             {
-                strwrt.WriteLine(x);
+                strwrt.Write(x.Title + " "+x.Path+"\n");
+               
             }
             
         }

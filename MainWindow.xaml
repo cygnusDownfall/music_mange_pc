@@ -27,14 +27,14 @@
             </Grid>
 
             <StackPanel Width="700" 
-                        Height="600" 
+                        Height="650" 
                         x:Name="playermedia" 
-                        Visibility="Collapsed">
+                        >
                 <uc:travelmainboard Width="700"
                                     Height="500"/>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10,10,10,10">
                     <Button  Style="{StaticResource previousmusic}">
-                        <Image Source="picture/next.png"/>
+                       
                     </Button>
 
                     <Button Style="{StaticResource previousstation}"/>
@@ -47,20 +47,20 @@
                   HorizontalAlignment="Stretch" 
                   VerticalAlignment="Stretch"
                   Height="650"
+                  Visibility="Collapsed"
                   >
                 <Border Style="{StaticResource borderListmusic}">
                     
-                    <ScrollViewer Style="{StaticResource scrollview}" x:Name="scrvw">
-                        
+                    <ScrollViewer Style="{StaticResource scrollview}" 
+                                  x:Name="scrvw"
+                                  >
+                        <!--<ScrollViewer.PanningMode >-->
+                            
                             <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >
-
                                 <ListViewItem Style="{StaticResource lvmusicitems}" MouseDoubleClick="Addmusicbt_Click">
                                     +  Add Your Music
                                 </ListViewItem>
-
                             </ListView>
-                        
-                        
                     </ScrollViewer>
                 </Border>
 

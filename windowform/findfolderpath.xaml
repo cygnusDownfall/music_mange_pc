@@ -13,7 +13,7 @@
     </Window.Resources>
     
     <Grid>
-        <Border BorderBrush="Bisque" 
+        <Border BorderBrush="Bisque"
                 BorderThickness="10" 
                 CornerRadius="20"
                 Background="White"
