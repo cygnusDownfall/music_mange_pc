@@ -41,12 +41,12 @@ namespace music_manage
         {
             if (!isplayed)
             {
-                player.Clock.Controller.Resume();
-
+                player.Play();
+                isplayed = true;
             }
             else
             {
-                player.Clock.Controller.Pause();
+                isplayed = false;
                 player.Pause();
             }
 
@@ -106,6 +106,7 @@ namespace music_manage
             if (listmusic != null && listViewItem != null)
             {
                 play(listmusic[Convert.ToInt32(listViewItem.Tag)].Path);
+                isplayed = true;
             }
         }
 

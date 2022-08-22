@@ -15,27 +15,33 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ApplicationDefinition Remove="App.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="AssemblyInfo.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Remove="App.xaml" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="picture\next.png" />
+    <None Remove="picture\next2.png" />
+    <None Remove="picture\PlayUI.png" />
+    <None Remove="picture\previousmove.png" />
+    <None Remove="picture\previousmove2.png" />
+    <None Remove="picture\replay.png" />
+    <None Remove="picture\replay2.png" />
+    <None Remove="picture\vector-truck-icon.png" />
     <None Remove="resource\next.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <ApplicationDefinition Include="AssemblyInfo.cs" />
+    <Resource Include="picture\PlayUI.png" />
+    <Resource Include="picture\previousmove.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="App.xaml" />
+    <Resource Include="picture\next.png" />
+    <Resource Include="picture\next2.png" />
+    <Resource Include="picture\previousmove2.png" />
+    <Resource Include="picture\replay.png" />
+    <Resource Include="picture\replay2.png" />
+    <Resource Include="picture\vector-truck-icon.png" />
     <Resource Include="resource\next.png" />
   </ItemGroup>
 

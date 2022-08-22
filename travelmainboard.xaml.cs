@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace music_manage
 {
-    /// <summary>
-    /// Interaction logic for travelmainboard.xaml
-    /// </summary>
+
     public partial class travelmainboard : UserControl
     {
         public travelmainboard()

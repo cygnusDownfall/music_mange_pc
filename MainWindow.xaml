@@ -32,14 +32,30 @@
                 <uc:travelmainboard Width="700"
                                     Height="500"/>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10,10,10,10">
-                    <Button  Style="{StaticResource previousmusic}">
-                       
+                    <Button  Style="{StaticResource mediaplaybt}">
+                        <Image Source="/picture/next.png" Width="100" Height="100">
+                            <Image.LayoutTransform>
+                                <ScaleTransform ScaleX="-1"/>
+                            </Image.LayoutTransform>
+                        </Image>
                     </Button>
-
-                    <Button Style="{StaticResource previousstation}"/>
-                    <Button Style="{StaticResource playpause}" Click="continueplay"/>
-                    <Button Style="{StaticResource nextstation}"/>
-                    <Button Style="{StaticResource nextmusic}"/>
+                    <Button Style="{StaticResource mediaplaybt}">
+                        <Image Source="/picture/previousmove.png" Width="100" Height="100"/>
+                        
+                    </Button>
+                    <Button Style="{StaticResource mediaplaybt}" Click="continueplay">
+                        <Image Source="/picture/PlayUI.png" Width="100" Height="100" />
+                    </Button>
+                    <Button Style="{StaticResource mediaplaybt}">
+                        <Image Source="/picture/previousmove.png" Width="100" Height="100">
+                            <Image.LayoutTransform>
+                                <ScaleTransform ScaleX="-1"/>
+                            </Image.LayoutTransform>
+                        </Image>
+                    </Button>
+                    <Button Style="{StaticResource mediaplaybt}">
+                        <Image Source="/picture/next.png" Width="100" Height="100"/>
+                    </Button>
                 </StackPanel>
             </StackPanel>
             <Grid x:Name="listmusicgr"  

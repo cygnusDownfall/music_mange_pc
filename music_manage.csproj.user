@@ -2,9 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Resource Update="App.xaml">
+    <ApplicationDefinition Update="App.xaml">
       <SubType>Designer</SubType>
-    </Resource>
+    </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="travelmainboard.xaml.cs">
