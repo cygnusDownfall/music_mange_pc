@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         FontSize="30"
         Title="MainWindow" Height="800" Width="1200"
+        Mouse.MouseDown="Window_MouseDown"
+        WindowStyle="None"
         >
     <Window.Resources>
 
@@ -16,14 +18,14 @@
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid Height="80" Background="AliceBlue" >
-            <Button Style="{StaticResource exitbt}"/>
-        </Grid>
+        
         <StackPanel Width="auto" Height="auto"   
                     HorizontalAlignment="Stretch"
                     Grid.Column="1">
-            
 
+            <Grid Height="80" Background="Black" >
+                <Button Style="{StaticResource exitbt}"/>
+            </Grid>
             <StackPanel Width="700" 
                         Height="650" 
                         x:Name="playermedia" 

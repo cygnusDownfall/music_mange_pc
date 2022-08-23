@@ -29,6 +29,13 @@ namespace music_manage
         }
 
         #region eventagrs
+        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == System.Windows.Input.MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
         void Addmusicbt_Click(object sender, RoutedEventArgs e)
         {
             findfolderpath findwindow = new findfolderpath();
@@ -156,8 +163,7 @@ namespace music_manage
 
         }
         #endregion
-
-
+        #region My_method
 
         void updateUIlistmusics() // on
         {
@@ -177,7 +183,7 @@ namespace music_manage
 
         }
 
-        void play() 
+        void play()
         {
             //play the currentplay music 
             player.Open(new Uri(currentplay.Path));
@@ -190,6 +196,9 @@ namespace music_manage
             listmusic = savesystem.LoadPathMusic();
             //updateUIlistmusics();
         }
+
+        #endregion
+
 
 
     }

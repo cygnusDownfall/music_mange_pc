@@ -54,10 +54,11 @@
         <Setter Property="Height" Value="80"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Foreground" Value="Aquamarine"/>
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderThickness" Value="5"/>
         <Setter Property="BorderBrush"  Value="{x:Null}"/>
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontSize" Value="40"/>
         <Setter Property="Content" Value="X"/>
         <EventSetter Event="Click" Handler="exit"/>
     </Style>
