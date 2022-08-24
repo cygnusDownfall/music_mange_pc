@@ -68,11 +68,11 @@ namespace music_manage
         }
         private void nextstation(object sender, RoutedEventArgs e)
         {
-            
+
         }
         private void previousstation(object sender, RoutedEventArgs e)
         {
-            
+
         }
         private void previousmusic(object sender, RoutedEventArgs e)
         {
@@ -193,13 +193,28 @@ namespace music_manage
 
         void loadmusic()
         {
+            if (listmusic != null)
+            {
+                listmusic.Clear();
+
+            }
             listmusic = savesystem.LoadPathMusic();
-            //updateUIlistmusics();
+            updateUIlistmusics();
         }
+
+
 
         #endregion
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (listmusic != null)
+            {
+                savesystem.SavePathMusic(listmusic);
+            }
 
+        }
 
+        
     }
 }

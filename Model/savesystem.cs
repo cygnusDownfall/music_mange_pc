@@ -6,7 +6,7 @@ namespace music_manage.Model
 {
     public static class savesystem
     {
-        
+
         public static void SavePathMusic(List<music> listmusic)
         {
             string savefilepath = AppDomain.CurrentDomain.BaseDirectory.ToString() + "data.txt";
@@ -14,14 +14,14 @@ namespace music_manage.Model
             {
                 FileStream fileStream = new FileStream(savefilepath, FileMode.Create);
             }
-            
+
             StreamWriter strwrt = new StreamWriter(savefilepath);
-            foreach(var x in listmusic)
+            foreach (var x in listmusic)
             {
-                strwrt.Write(x.Title + " "+x.Path+"\n");
-               
+                strwrt.Write(x.Title + " " + x.Path + "\n");
+
             }
-            
+
         }
         public static List<music> LoadPathMusic()
         {
@@ -30,18 +30,18 @@ namespace music_manage.Model
             if (File.Exists(savefilepath))
             {
                 List<string> res = new List<string>();
-                
-                foreach(string x in File.ReadAllLines(savefilepath))
+
+                foreach (string x in File.ReadAllLines(savefilepath))
                 {
                     res.Add(x);
                 }
-                foreach(var x in res)
+                foreach (var x in res)
                 {
                     bool title = true;
-                    string Title="", path="";
-                    for(int i = 0, n = x.Length; i < n; i++)
+                    string Title = "", path = "";
+                    for (int i = 0, n = x.Length; i < n; i++)
                     {
-                        if (x[i]==' ')
+                        if (x[i] == ' ')
                         {
                             title = false;
                         }
@@ -57,7 +57,7 @@ namespace music_manage.Model
                     music music = new music(Title, path);
                     lm.Add(music);
                 }
-                
+
             }
 
             return lm;
@@ -66,11 +66,12 @@ namespace music_manage.Model
         {
             //input list<pathfolder>->output list<music>
             List<music> result = new List<music>();
-            foreach(var x in stringfolderpaths)
+            foreach (var x in stringfolderpaths)
             {
                 if (x != "")
                 {
                     DirectoryInfo directory = new DirectoryInfo(x);
+
                     FileInfo[] files = directory.GetFiles("*.mp3");
                     foreach (var y in files)
                     {
@@ -78,13 +79,10 @@ namespace music_manage.Model
                         result.Add(music);
                     }
                 }
-                
+
             }
-
-
-            System.Windows.MessageBox.Show(result[0].ToString());
             return result;
         }
     }
-    
+
 }
