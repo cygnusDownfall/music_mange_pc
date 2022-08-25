@@ -29,6 +29,20 @@ namespace music_manage
         }
 
         #region eventagrs
+        private void scrvw_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        {
+            
+            scrvw.ScrollToVerticalOffset(scrvw.VerticalOffset - e.Delta );
+            
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (listmusic != null)
+            {
+                savesystem.SavePathMusic(listmusic);
+            }
+
+        }
         private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (e.ChangedButton == System.Windows.Input.MouseButton.Left)
@@ -204,16 +218,10 @@ namespace music_manage
 
 
 
+
+
+
         #endregion
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (listmusic != null)
-            {
-                savesystem.SavePathMusic(listmusic);
-            }
-
-        }
 
         
     }

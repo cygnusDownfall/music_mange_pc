@@ -7,10 +7,13 @@
              mc:Ignorable="d" >
     <Grid>
         <Canvas>
-            <Image  />
-            <Image Width="100" Height="100"  Source="https://static.vecteezy.com/system/resources/previews/000/423/742/original/vector-truck-icon.jpg"  />
-            
+            <Image  Panel.ZIndex="0"/>
+            <Image Width="50" Height="50"  
+                   Source="picture/vector-truck-icon.png"  
+                   Panel.ZIndex="1"
+                   x:Name="truck" />
+
         </Canvas>
-            
+
     </Grid>
 </UserControl>

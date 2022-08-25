@@ -6,8 +6,9 @@
         xmlns:uc="clr-namespace:music_manage"
         mc:Ignorable="d"
         FontSize="30"
-        Title="MainWindow" Height="800" Width="1200"
+        Title="MainWindow" Height="808" Width="1200"
         Mouse.MouseDown="Window_MouseDown"
+        
         WindowStyle="None"
         >
     <Window.Resources>
@@ -21,7 +22,8 @@
 
         <StackPanel Width="auto" Height="auto"   
                     HorizontalAlignment="Stretch"
-                    Grid.Column="1">
+                    Grid.Column="1"
+                    >
 
             <Grid Height="80" Background="Black" >
                 <Button Style="{StaticResource exitbt}" Click="Button_Click"/>
@@ -30,8 +32,8 @@
                         Height="650" 
                         x:Name="playermedia" 
                         >
-                <uc:travelmainboard Width="700"
-                                    Height="500"/>
+                <uc:travelmainboard Width="700" Height="500"
+                                    />
                 <StackPanel HorizontalAlignment="Center" 
                             Orientation="Horizontal" 
                             Margin="10,10,10,10">
@@ -66,15 +68,20 @@
                   VerticalAlignment="Stretch"
                   Height="650"
                   Visibility="Collapsed"
+                  
                   >
+                <Grid Mouse.MouseWheel="scrvw_MouseWheel"/>
                 <Border Style="{StaticResource borderListmusic}">
 
                     <ScrollViewer Style="{StaticResource scrollview}" 
                                   x:Name="scrvw"
-                                  >
-                        <!--<ScrollViewer.PanningMode >-->
+                                  
+                                  PanningMode="VerticalOnly"
+                                  PanningRatio="50">
+                       
 
                         <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >
+
                             <ListViewItem Style="{StaticResource lvmusicitems}" MouseDoubleClick="Addmusicbt_Click">
                                 +  Add Your Music
                             </ListViewItem>

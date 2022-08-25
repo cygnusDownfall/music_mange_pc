@@ -64,7 +64,7 @@ namespace music_manage.Model
         }
         public static List<music> LoadMusicfromFolder(List<string> stringfolderpaths)
         {
-            //input list<pathfolder>->output list<music>
+            
             List<music> result = new List<music>();
             foreach (var x in stringfolderpaths)
             {

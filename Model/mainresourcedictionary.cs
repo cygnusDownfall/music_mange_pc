@@ -97,8 +97,8 @@ namespace music_manage.Model
                 }
             }
         }
-        #endregion 
-
+        #endregion
+        #region leaveevent
         public void lplaybt(object sender, System.Windows.Input.MouseEventArgs e)
         {
             Button? button = sender as Button;
@@ -179,6 +179,6 @@ namespace music_manage.Model
                 }
             }
         }
-
+        #endregion
     }
 }
