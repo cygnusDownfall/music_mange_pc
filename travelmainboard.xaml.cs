@@ -38,14 +38,45 @@ namespace music_manage
 
         public void OnValueChange()
         {
-            position= RePosition(value);
+            position= Position(value);
             truck.SetValue(Canvas.LeftProperty, position[0]);
             truck.SetValue(Canvas.TopProperty, position[1]);
         }
-        int[] RePosition(int val) // tinh toan vi tri dua tren val
+        int[] Position(int val) // tinh toan vi tri dua tren val
         {
             
-            int[] res = new int[2];
+            int[] res = new int[2] {0,0};
+            int floor = val/bar_w;
+            int delta = val % bar_w;
+            
+            if (delta - floor * bar_h < 0)
+            {
+                //tinh y
+                res[1] = delta;
+                //tinh x
+                if ((floor & 1) == 0)
+                {
+                    res[0] = 0;
+                }
+                else
+                {
+                    res[0] = bar_w;
+                }
+            }else
+            {
+                //tinh y
+                res[1] = floor * bar_h;
+                //tinh x
+                if ((floor & 1) == 0)
+                {
+                    res[0] = delta - floor * bar_h;
+                }
+                else
+                {
+                    res[0] = bar_w-(delta - floor * bar_h);
+                }
+            }
+            
             
             return res;
         }

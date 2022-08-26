@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace music_manage
 {
@@ -14,6 +15,8 @@ namespace music_manage
     public partial class MainWindow : Window
     {
         MediaPlayer player;//trinh phat nhac
+        DispatcherTimer multitimer;
+
         bool isplayed = false;
         List<music>? listmusic;
 
@@ -22,10 +25,19 @@ namespace music_manage
         public MainWindow()
         {
             player = new MediaPlayer();
+            multitimer = new DispatcherTimer();
+            multitimer.Interval = new TimeSpan(0, 0, 1);
+            multitimer.Tick += Multitimer_Tick;
 
             InitializeComponent();
 
             loadmusic();
+        }
+
+        private void Multitimer_Tick(object? sender, EventArgs e)
+        {
+            
+            mainboard.value = caculatevalue(player.Clock.CurrentTime);
         }
 
         #region eventagrs
@@ -58,17 +70,21 @@ namespace music_manage
             findwindow.ShowDialog();
 
         }
+        #region mediabt
         private void continueplay(object sender, RoutedEventArgs e)
         {
             if (!isplayed)
             {
-                player.Play();
                 isplayed = true;
+                multitimer.Start();
+                player.Play();
             }
             else
             {
                 isplayed = false;
+                multitimer.Stop();
                 player.Pause();
+
             }
 
         }
@@ -103,6 +119,7 @@ namespace music_manage
 
             }
         }
+        #endregion
         void changetab(object sender, RoutedEventArgs e) // xong
         {
             Button? tab = sender as Button;
@@ -178,7 +195,10 @@ namespace music_manage
         }
         #endregion
         #region My_method
-
+        int caculatevalue(TimeSpan? clock)
+        {
+            return 0;
+        }
         void updateUIlistmusics() // on
         {
             lvmusic.Items.Clear();

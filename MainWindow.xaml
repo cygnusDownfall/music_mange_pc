@@ -33,7 +33,7 @@
                         x:Name="playermedia" 
                         >
                 <uc:travelmainboard Width="700" Height="500"
-                                    />
+                                    x:Name="mainboard"/>
                 <StackPanel HorizontalAlignment="Center" 
                             Orientation="Horizontal" 
                             Margin="10,10,10,10">
