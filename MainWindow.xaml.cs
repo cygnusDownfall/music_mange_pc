@@ -25,6 +25,7 @@ namespace music_manage
         public MainWindow()
         {
             player = new MediaPlayer();
+            //player.Clock = new MediaClock(new MediaTimeline());
             multitimer = new DispatcherTimer();
             multitimer.Interval = new TimeSpan(0, 0, 1);
             multitimer.Tick += Multitimer_Tick;
@@ -36,18 +37,18 @@ namespace music_manage
 
         private void Multitimer_Tick(object? sender, EventArgs e)
         {
-            
             mainboard.value = caculatevalue(player.Clock.CurrentTime);
+            MessageBox.Show(mainboard.value.ToString());
         }
 
         #region eventagrs
         private void scrvw_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
         {
-            
-            scrvw.ScrollToVerticalOffset(scrvw.VerticalOffset - e.Delta );
-            
+
+            scrvw.ScrollToVerticalOffset(scrvw.VerticalOffset - e.Delta);
+
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e) // Exit button
         {
             if (listmusic != null)
             {
@@ -55,7 +56,7 @@ namespace music_manage
             }
 
         }
-        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e) // keo tha khung window
         {
             if (e.ChangedButton == System.Windows.Input.MouseButton.Left)
             {
@@ -76,8 +77,7 @@ namespace music_manage
             if (!isplayed)
             {
                 isplayed = true;
-                multitimer.Start();
-                player.Play();
+                play();
             }
             else
             {
@@ -219,10 +219,16 @@ namespace music_manage
 
         void play()
         {
+            if (multitimer.IsEnabled)
+            {
+                multitimer.Stop();
+            }
+            multitimer.Start();
+            
             //play the currentplay music 
             player.Open(new Uri(currentplay.Path));
             player.Play();
-
+            
         }
 
         void loadmusic()
@@ -243,6 +249,6 @@ namespace music_manage
 
         #endregion
 
-        
+
     }
 }
