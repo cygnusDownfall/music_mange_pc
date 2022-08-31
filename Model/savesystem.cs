@@ -62,7 +62,7 @@ namespace music_manage.Model
 
             return lm;
         }
-        public static List<music> LoadMusicfromFolder(List<string> stringfolderpaths)
+        public static List<music> LoadMusicfromFolder(List<string> stringfolderpaths) //bug some music load error and I can't get title or album 
         {
             
             List<music> result = new List<music>();
@@ -75,6 +75,7 @@ namespace music_manage.Model
                     FileInfo[] files = directory.GetFiles("*.mp3");
                     foreach (var y in files)
                     {
+                        
                         music music = new music(y.Name, y.FullName);
                         result.Add(music);
                     }

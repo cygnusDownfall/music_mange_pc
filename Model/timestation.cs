@@ -5,20 +5,51 @@ namespace music_manage.Model
 {
     public class timestation
     {
-
-        DateTime time;
-        string Mota { get; set; }
-        timestation()
+        int? secconds { get; set; }
+        public TimeSpan? timeSpan;
+        string? Mota { get; set; }
+        timestation(int seccond)
         {
-
+            secconds = seccond;
+        }
+        timestation(int seccond,string mota)
+        {
+            secconds = seccond;
+            Mota = mota;
+        }
+        timestation(TimeSpan ts)
+        {
+            timeSpan = ts;
+        }
+        timestation(TimeSpan ts, string mota)
+        {
+            timeSpan = ts;
+            Mota = mota;
         }
     }
     public class timestation_manager
     {
-        List<timestation>? timestations;
+        List<timestation> timestations;
+        int idcurrentts;
+        public timestation currentts()
+        {
+            return timestations[idcurrentts];
+        }
         public timestation_manager(List<timestation> Timestations)
         {
             timestations = Timestations;
+        }
+        public void movetoId(int ID)
+        {
+            idcurrentts = ID;
+        }
+        public void next()
+        {
+            movetoId(idcurrentts + 1);
+        }
+        public void previous()
+        {
+            movetoId(idcurrentts - 1);
         }
     }
     public class music
@@ -38,8 +69,5 @@ namespace music_manage.Model
             currentmusic_manager = new timestation_manager(timestations);
         }
     }
-    public class music_manager //model quan trong nhat
-    {
-
-    }
+   
 }

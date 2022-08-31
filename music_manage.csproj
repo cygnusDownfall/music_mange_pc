@@ -28,6 +28,7 @@
     <None Remove="picture\previousmove2.png" />
     <None Remove="picture\replay.png" />
     <None Remove="picture\replay2.png" />
+    <None Remove="picture\replay3.png" />
     <None Remove="picture\vector-truck-icon.png" />
   </ItemGroup>
 
@@ -44,6 +45,7 @@
     <Resource Include="picture\previousmove2.png" />
     <Resource Include="picture\replay.png" />
     <Resource Include="picture\replay2.png" />
+    <Resource Include="picture\replay3.png" />
     <Resource Include="picture\vector-truck-icon.png" />
   </ItemGroup>
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace music_manage
@@ -12,33 +13,38 @@ namespace music_manage
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    enum replaymode { noReplay, ReplayOnly, ReplayAll }
     public partial class MainWindow : Window
     {
         MediaPlayer player;//trinh phat nhac
-        DispatcherTimer multitimer;
+        replaymode replay;// co phat lai hay khong? 
+        DispatcherTimer multitimer;//timer de chay 
 
         bool isplayed = false;
         List<music>? listmusic;
-
+        
 
         music currentplay;
         public MainWindow()
         {
             player = new MediaPlayer();
+            player.MediaEnded += Player_MediaEnded;
             //player.Clock = new MediaClock(new MediaTimeline());
             multitimer = new DispatcherTimer();
             multitimer.Interval = new TimeSpan(0, 0, 1);
             multitimer.Tick += Multitimer_Tick;
 
             InitializeComponent();
-
+            
             loadmusic();
         }
 
+        
+
         private void Multitimer_Tick(object? sender, EventArgs e)
         {
-            mainboard.value = caculatevalue(player.Clock.CurrentTime);
-            MessageBox.Show(mainboard.value.ToString());
+            //MessageBox.Show(player.GetCurrentValueAsFrozen().ToString());
+            //MessageBox.Show(mainboard.value.ToString());
         }
 
         #region eventagrs
@@ -90,19 +96,23 @@ namespace music_manage
         }
         private void nextmusic(object sender, RoutedEventArgs e)
         {
-            if (listmusic != null)
-            {
-                currentplay = listmusic[listmusic.IndexOf(currentplay) + 1];
-                play();
-            }
+            chagnemusicnextandplay();
         }
         private void nextstation(object sender, RoutedEventArgs e)
         {
-
+            if (currentplay != null)
+            {
+                currentplay.currentmusic_manager.next();
+                player.Position=currentplay.currentmusic_manager.
+            }
+            
         }
         private void previousstation(object sender, RoutedEventArgs e)
         {
-
+            if (currentplay != null)
+            {
+                currentplay.currentmusic_manager.previous();
+            }
         }
         private void previousmusic(object sender, RoutedEventArgs e)
         {
@@ -119,7 +129,51 @@ namespace music_manage
 
             }
         }
+        private void replaymusic(object sender, RoutedEventArgs e)
+        {
+            Button? bt = sender as Button;
+            if (bt != null)
+            {
+                Image? icontent = bt.Content as Image;
+                if (icontent != null)
+                {
+                    if (replay == replaymode.noReplay)
+                    {
+                        replay = replaymode.ReplayOnly;
+
+                        icontent.Source = new BitmapImage(new System.Uri("pack://application:,,,/picture/replay2.png"));
+
+                    }
+                    else if (replay == replaymode.ReplayOnly)
+                    {
+                        replay = replaymode.ReplayAll;
+
+                        icontent.Source = new BitmapImage(new System.Uri("pack://application:,,,/picture/replay3.png")); 
+                    }
+                    else
+                    {
+                        replay = replaymode.noReplay;
+
+                        icontent.Source = new BitmapImage(new System.Uri("pack://application:,,,/picture/replay.png")); 
+
+                    }
+                }
+
+            }
+        }
         #endregion
+        private void Player_MediaEnded(object? sender, EventArgs e)
+        {
+            if (replay == replaymode.ReplayAll)
+            {
+                chagnemusicnextandplay();
+            }
+            else if (replay == replaymode.ReplayOnly)
+            {
+                play();
+            }
+        }
+
         void changetab(object sender, RoutedEventArgs e) // xong
         {
             Button? tab = sender as Button;
@@ -195,9 +249,13 @@ namespace music_manage
         }
         #endregion
         #region My_method
-        int caculatevalue(TimeSpan? clock)
+        void PlayAt(int seccond)
         {
-            return 0;
+            player.Position = new TimeSpan(0, 0, seccond);
+        }
+        void PlayAt(TimeSpan ts)
+        {
+            player.Position = ts;
         }
         void updateUIlistmusics() // on
         {
@@ -224,13 +282,20 @@ namespace music_manage
                 multitimer.Stop();
             }
             multitimer.Start();
-            
+
             //play the currentplay music 
             player.Open(new Uri(currentplay.Path));
             player.Play();
-            
-        }
 
+        }
+        void chagnemusicnextandplay()
+        {
+            if (listmusic != null)
+            {
+                currentplay = listmusic[listmusic.IndexOf(currentplay) + 1];
+                play();
+            }
+        }
         void loadmusic()
         {
             if (listmusic != null)
@@ -241,11 +306,6 @@ namespace music_manage
             listmusic = savesystem.LoadPathMusic();
             updateUIlistmusics();
         }
-
-
-
-
-
 
         #endregion
 

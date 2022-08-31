@@ -28,7 +28,7 @@
             <Grid Height="80" Background="Black" >
                 <Button Style="{StaticResource exitbt}" Click="Button_Click"/>
             </Grid>
-            <StackPanel Width="700" 
+            <StackPanel Width="720" 
                         Height="650" 
                         x:Name="playermedia" 
                         >
@@ -36,7 +36,7 @@
                                     x:Name="mainboard"/>
                 <StackPanel HorizontalAlignment="Center" 
                             Orientation="Horizontal" 
-                            Margin="10,10,10,10">
+                            Margin="10,10,10,0">
                     <Button  Style="{StaticResource prem}" Click="previousmusic">
                         <Image Source="/picture/next.png" Width="100" Height="100">
                             <Image.LayoutTransform>
@@ -61,6 +61,9 @@
                     <Button Style="{StaticResource nextm}" Click="nextmusic">
                         <Image Source="/picture/next.png" Width="100" Height="100"/>
                     </Button>
+                    <Button Style="{StaticResource mediaplaybt}" Click="replaymusic">
+                        <Image Source="/picture/replay.png" Width="100" Height="100"/>
+                    </Button>
                 </StackPanel>
             </StackPanel>
             <Grid x:Name="listmusicgr"  
@@ -70,7 +73,9 @@
                   Visibility="Collapsed"
                   
                   >
-                <Grid Mouse.MouseWheel="scrvw_MouseWheel"/>
+                <Grid Mouse.MouseWheel="scrvw_MouseWheel" Panel.ZIndex="1">
+                    
+                </Grid>
                 <Border Style="{StaticResource borderListmusic}">
 
                     <ScrollViewer Style="{StaticResource scrollview}" 

@@ -3,7 +3,7 @@
                     x:Class="music_manage.Model.mainresourcedictionary"
                     x:ClassModifier="public">
     <!--#region Font-->
-    <FontFamily x:Key="dynar">font\dynar\static\DynaPuff-VariableFont.ttf#DynaPuff-VariableFont</FontFamily>
+    <FontFamily x:Key="dynar">font\dynar\static\#DynaPuff-VariableFont</FontFamily>
     <!--#endregion-->
     <!--#region solidcolorbrush-->
     <SolidColorBrush x:Key="melonMelody" Color="#f8c291"/>
