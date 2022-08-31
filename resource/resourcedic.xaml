@@ -15,6 +15,8 @@
         <GradientStop Color="DarkViolet" Offset="0.55"/>
     </LinearGradientBrush>
     <!--#endregion-->
+
+    <Image x:Key="max" Source="pack://application:,,,/picture/max.png"/>
     <!--#region Style-->
 
     <!--#region style of mediaplaybt-->
@@ -46,7 +48,10 @@
         <EventSetter Event="MouseEnter" Handler="hoverprest"/>
         <EventSetter Event="MouseLeave" Handler="lprest"/>
     </Style>
-
+    <Style x:Key="media" TargetType="StackPanel">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
     <!--#endregion-->
     <Style x:Key="borderW" TargetType="Border">
         <Setter Property="Margin" Value="5,5,5,5"/>
@@ -87,6 +92,11 @@
         <Setter Property="FontSize" Value="40"/>
         <Setter Property="Content" Value="X"/>
         <EventSetter Event="Click" Handler="exit"/>
+    </Style>
+    <Style x:Key="maxwindow" TargetType="Button" BasedOn="{StaticResource exitbt}">
+        <Setter Property="Content" Value="{StaticResource max}"/>
+
+
     </Style>
     <Style x:Key="scrollview" TargetType="ScrollViewer">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>

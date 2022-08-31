@@ -41,13 +41,16 @@ namespace music_manage
 
         
 
-        private void Multitimer_Tick(object? sender, EventArgs e)
+        private void Multitimer_Tick(object? sender, EventArgs e)//timer chay khi nhac dc phat
         {
-            //MessageBox.Show(player.GetCurrentValueAsFrozen().ToString());
-            //MessageBox.Show(mainboard.value.ToString());
+            
         }
 
         #region eventagrs
+        private void Maxsize(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Maximized;
+        }
         private void scrvw_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
         {
 
@@ -103,7 +106,7 @@ namespace music_manage
             if (currentplay != null)
             {
                 currentplay.currentmusic_manager.next();
-                player.Position=currentplay.currentmusic_manager.
+                player.Position = currentplay.currentmusic_manager.currentts();
             }
             
         }
@@ -112,6 +115,7 @@ namespace music_manage
             if (currentplay != null)
             {
                 currentplay.currentmusic_manager.previous();
+                player.Position = currentplay.currentmusic_manager.currentts();
             }
         }
         private void previousmusic(object sender, RoutedEventArgs e)
@@ -253,9 +257,9 @@ namespace music_manage
         {
             player.Position = new TimeSpan(0, 0, seccond);
         }
-        void PlayAt(TimeSpan ts)
+        void setValueforUC(TimeSpan ts)
         {
-            player.Position = ts;
+            mainboard.value = ts.TotalSeconds;
         }
         void updateUIlistmusics() // on
         {

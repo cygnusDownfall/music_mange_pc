@@ -6,16 +6,18 @@ namespace music_manage.Model
     public class timestation
     {
         int? secconds { get; set; }
-        public TimeSpan? timeSpan;
+        public TimeSpan timeSpan;
         string? Mota { get; set; }
         timestation(int seccond)
         {
             secconds = seccond;
+            timeSpan = new TimeSpan(0, 0, seccond);
         }
         timestation(int seccond,string mota)
         {
             secconds = seccond;
             Mota = mota;
+            timeSpan = new TimeSpan(0, 0, seccond);
         }
         timestation(TimeSpan ts)
         {
@@ -31,9 +33,9 @@ namespace music_manage.Model
     {
         List<timestation> timestations;
         int idcurrentts;
-        public timestation currentts()
+        public TimeSpan currentts()
         {
-            return timestations[idcurrentts];
+            return timestations[idcurrentts].timeSpan;
         }
         public timestation_manager(List<timestation> Timestations)
         {

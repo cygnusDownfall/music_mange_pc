@@ -25,18 +25,17 @@
                     Grid.Column="1"
                     >
 
-            <Grid Height="80" Background="Black" >
+            <StackPanel Height="80" Background="Black" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Style="{StaticResource maxwindow}" Click="Maxsize"/>
                 <Button Style="{StaticResource exitbt}" Click="Button_Click"/>
-            </Grid>
+            </StackPanel>
             <StackPanel Width="720" 
-                        Height="650" 
+                        Height="auto" 
                         x:Name="playermedia" 
                         >
-                <uc:travelmainboard Width="700" Height="500"
+                <uc:travelmainboard Width="700" Height="475"
                                     x:Name="mainboard"/>
-                <StackPanel HorizontalAlignment="Center" 
-                            Orientation="Horizontal" 
-                            Margin="10,10,10,0">
+                <StackPanel Style="{StaticResource media}">
                     <Button  Style="{StaticResource prem}" Click="previousmusic">
                         <Image Source="/picture/next.png" Width="100" Height="100">
                             <Image.LayoutTransform>
@@ -61,10 +60,21 @@
                     <Button Style="{StaticResource nextm}" Click="nextmusic">
                         <Image Source="/picture/next.png" Width="100" Height="100"/>
                     </Button>
+                    
+                </StackPanel>
+                <StackPanel Style="{StaticResource media}">
                     <Button Style="{StaticResource mediaplaybt}" Click="replaymusic">
                         <Image Source="/picture/replay.png" Width="100" Height="100"/>
                     </Button>
+                    <Button Style="{StaticResource mediaplaybt}" >
+                        <Image Source="/picture/replay.png" Width="100" Height="100"/>
+                    </Button>
+                    <Button Style="{StaticResource mediaplaybt}" >
+                        <Image Source="/picture/tsadd.png" Width="100" Height="100"/>
+                    </Button>
                 </StackPanel>
+                
+                
             </StackPanel>
             <Grid x:Name="listmusicgr"  
                   HorizontalAlignment="Stretch" 
