@@ -103,7 +103,7 @@
                         </ListView>
                     </ScrollViewer>
                 </Border>
-                <uc:Floatbutton />
+                <uc:Floatbutton eventhandle="Addmusicbt_Click"/>
             </Grid>
             <Grid x:Name="Detailpanel" Visibility="Collapsed">
 

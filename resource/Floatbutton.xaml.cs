@@ -1,4 +1,7 @@
-﻿using System.Windows.Controls;
+﻿using music_manage.Model;
+using System;
+using System.Windows;
+using System.Windows.Controls;
 
 
 namespace music_manage.resource
@@ -8,6 +11,7 @@ namespace music_manage.resource
     /// </summary>
     public partial class Floatbutton : UserControl
     {
+        public event EventHandler<RoutedEventArgs> eventhandle;
         public Floatbutton()
         {
             InitializeComponent();
@@ -19,6 +23,11 @@ namespace music_manage.resource
             {
                 
             }
+        }
+
+        private void bt_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            eventhandle.Invoke(this, e);
         }
     }
 }

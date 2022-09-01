@@ -77,13 +77,9 @@ namespace music_manage
                 this.DragMove();
             }
         }
-        void Addmusicbt_Click(object sender, RoutedEventArgs e)
+        private void Addmusicbt_Click(object sender, RoutedEventArgs e)
         {
-            findfolderpath findwindow = new findfolderpath();
-
-            findwindow.eventhandle += AddmusicEvent;
-            findwindow.ShowDialog();
-
+            openfindpathwidow();
         }
         #region mediabt
         private void continueplay(object sender, RoutedEventArgs e)
@@ -260,6 +256,14 @@ namespace music_manage
         #endregion
         #region My_method
        
+        void openfindpathwidow()
+        {
+            findfolderpath findwindow = new findfolderpath();
+
+            findwindow.eventhandle += AddmusicEvent;
+            findwindow.ShowDialog();
+
+        }
         void PlayAt(int seccond)
         {
             player.Position = new TimeSpan(0, 0, seccond);
@@ -324,8 +328,9 @@ namespace music_manage
             updateUIlistmusics();
         }
 
+
         #endregion
 
-
+       
     }
 }

@@ -110,6 +110,9 @@
     </Style>
     <Style x:Key="restore" TargetType="Button" BasedOn="{StaticResource exitbt}">
         <Setter Property="Content" Value="_"/>
+        <Setter Property="FontSize" Value="60"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
     <Style x:Key="scrollview" TargetType="ScrollViewer">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>

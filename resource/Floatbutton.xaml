@@ -15,10 +15,12 @@
                 Background="LightYellow"
                 CornerRadius="20"
                 AllowDrop="True"
+                 Mouse.MouseDown="Button_MouseDown" 
                 >
             <Button x:Name="bt" 
                     Style="{StaticResource exitbt}"
-                Mouse.MouseDown="Button_MouseDown" 
+                Click="bt_Click"
+                
                 FontSize="60"
                 Content="+"/>
         </Border>
