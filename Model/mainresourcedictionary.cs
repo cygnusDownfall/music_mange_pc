@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using music_manage.windowform;
 
 namespace music_manage.Model
 {
@@ -11,10 +12,7 @@ namespace music_manage.Model
             InitializeComponent();
         }
 
-        private void showliststations(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
         #region hover  
         public void hoverplaybt(object sender, System.Windows.Input.MouseEventArgs e)
         {

@@ -36,7 +36,9 @@
                         Height="auto" 
                         x:Name="playermedia" 
                         >
-                <uc:travelmainboard Width="700" Height="475"
+                <TextBlock x:Name="namemusic" Foreground="Wheat"
+                           HorizontalAlignment="Center"> </TextBlock>
+                <uc:travelmainboard Width="700" Height="450"
                                     x:Name="mainboard"/>
                 <StackPanel Style="{StaticResource media}">
                     <Button  Style="{StaticResource prem}" Click="previousmusic">
@@ -72,7 +74,7 @@
                     <Button Style="{StaticResource mediaplaybt}" >
                         <Image Source="/picture/replay.png" Width="100" Height="100"/>
                     </Button>
-                    <Button Style="{StaticResource mediaplaybt}">
+                    <Button Style="{StaticResource mediaplaybt}" Click="showliststations">
                         <Image Source="/picture/tsadd.png" Width="100" Height="100"/>
                     </Button>
                 </StackPanel>

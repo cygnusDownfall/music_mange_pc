@@ -33,6 +33,7 @@ namespace music_manage.Model
     {
         List<timestation> timestations;
         int idcurrentts;
+        public int count { get { return timestations.Count; }}
         public TimeSpan currentts()
         {
             return timestations[idcurrentts].timeSpan;

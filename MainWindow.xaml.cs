@@ -253,9 +253,15 @@ namespace music_manage
             updateUIlistmusics();
 
         }
+        private void showliststations(object sender, RoutedEventArgs e)
+        {
+            showliststations showliststation = new showliststations();
+            showliststation.timestations = currentplay.currentmusic_manager;
+            showliststation.ShowDialog();
+        }
         #endregion
         #region My_method
-       
+
         void openfindpathwidow()
         {
             findfolderpath findwindow = new findfolderpath();
@@ -305,6 +311,7 @@ namespace music_manage
                 //play the currentplay music 
                 player.Open(new Uri(currentplay.Path));
                 player.Play();
+                namemusic.Text = currentplay.Title;
             }
            
 

@@ -53,7 +53,7 @@
         <Setter Property="Orientation" Value="Horizontal"/>
     </Style>
     <Style x:Key="addstation" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
-        <EventSetter Event="Click" Handler="showliststations"/>
+           
     </Style>
     <!--#endregion-->
     <Style x:Key="borderW" TargetType="Border">
