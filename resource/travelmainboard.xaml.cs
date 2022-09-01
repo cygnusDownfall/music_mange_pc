@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Threading;
 
-namespace music_manage
+namespace music_manage.resource
 {
 
     public partial class travelmainboard : UserControl

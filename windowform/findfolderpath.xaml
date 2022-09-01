@@ -25,7 +25,7 @@
                            Height="80"
                            VerticalAlignment="Top"/>
                     <Button Style="{StaticResource exitbt}"
-                            />
+                            Click="exit"/>
                 </Grid>
                 
                 <TextBlock Text="Copy your folder location path:"

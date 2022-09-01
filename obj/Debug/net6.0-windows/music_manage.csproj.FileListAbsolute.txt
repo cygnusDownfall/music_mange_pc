@@ -5,13 +5,11 @@ F:\MWSPr\music_manage\bin\Debug\net6.0-windows\music_manage.dll
 F:\MWSPr\music_manage\bin\Debug\net6.0-windows\music_manage.pdb
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\music_manage.csproj.AssemblyReference.cache
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\MainWindow.g.cs
-F:\MWSPr\music_manage\obj\Debug\net6.0-windows\travelmainboard.g.cs
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\App.g.cs
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\music_manage_MarkupCompile.cache
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\music_manage_MarkupCompile.lref
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\MainWindow.baml
-F:\MWSPr\music_manage\obj\Debug\net6.0-windows\travelmainboard.baml
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\music_manage.g.resources
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\music_manage.GeneratedMSBuildEditorConfig.editorconfig
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\music_manage.AssemblyInfoInputs.cache
@@ -27,3 +25,9 @@ F:\MWSPr\music_manage\obj\Debug\net6.0-windows\windowform\findfolderpath.baml
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\App.baml
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\resource\resourcedic.baml
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\resource\resourcedic.g.cs
+F:\MWSPr\music_manage\obj\Debug\net6.0-windows\resource\Floatbutton.g.cs
+F:\MWSPr\music_manage\obj\Debug\net6.0-windows\resource\travelmainboard.g.cs
+F:\MWSPr\music_manage\obj\Debug\net6.0-windows\resource\Floatbutton.baml
+F:\MWSPr\music_manage\obj\Debug\net6.0-windows\resource\travelmainboard.baml
+F:\MWSPr\music_manage\obj\Debug\net6.0-windows\windowform\showliststations.g.cs
+F:\MWSPr\music_manage\obj\Debug\net6.0-windows\windowform\showliststations.baml

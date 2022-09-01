@@ -51,6 +51,10 @@ namespace music_manage.windowform
             musicsfolderlocations.Children.Add(textBox);
 
         }
-
+        void exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            //MessageBox.Show(this.WindowState.ToString());
+        }
     }
 }

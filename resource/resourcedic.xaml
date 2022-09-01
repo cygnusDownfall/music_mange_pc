@@ -52,6 +52,9 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Orientation" Value="Horizontal"/>
     </Style>
+    <Style x:Key="addstation" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
+        <EventSetter Event="Click" Handler="showliststations"/>
+    </Style>
     <!--#endregion-->
     <Style x:Key="borderW" TargetType="Border">
         <Setter Property="Margin" Value="5,5,5,5"/>
@@ -91,12 +94,22 @@
         <Setter Property="BorderBrush"  Value="{x:Null}"/>
         <Setter Property="FontSize" Value="40"/>
         <Setter Property="Content" Value="X"/>
-        <EventSetter Event="Click" Handler="exit"/>
+
     </Style>
-    <Style x:Key="maxwindow" TargetType="Button" BasedOn="{StaticResource exitbt}">
+    <Style x:Key="maxwindow" TargetType="Button">
         <Setter Property="Content" Value="{StaticResource max}"/>
-
-
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="80"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Foreground" Value="Aquamarine"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="BorderThickness" Value="5"/>
+        <Setter Property="BorderBrush"  Value="{x:Null}"/>
+        <Setter Property="FontSize" Value="40"/>
+    </Style>
+    <Style x:Key="restore" TargetType="Button" BasedOn="{StaticResource exitbt}">
+        <Setter Property="Content" Value="_"/>
     </Style>
     <Style x:Key="scrollview" TargetType="ScrollViewer">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>

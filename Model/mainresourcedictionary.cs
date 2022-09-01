@@ -11,10 +11,9 @@ namespace music_manage.Model
             InitializeComponent();
         }
 
-        public void exit(object sender, RoutedEventArgs e)
+        private void showliststations(object sender, RoutedEventArgs e)
         {
-            
-            Application.Current.Shutdown();
+
         }
         #region hover  
         public void hoverplaybt(object sender, System.Windows.Input.MouseEventArgs e)

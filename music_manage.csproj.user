@@ -7,10 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="travelmainboard.xaml.cs">
+    <Compile Update="resource\Floatbutton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="resource\travelmainboard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="windowform\findfolderpath.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="windowform\showliststations.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -18,13 +24,19 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="resource\Floatbutton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="resource\resourcedic.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="travelmainboard.xaml">
+    <Page Update="resource\travelmainboard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="windowform\findfolderpath.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="windowform\showliststations.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

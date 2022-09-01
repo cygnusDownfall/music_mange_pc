@@ -39,11 +39,12 @@ namespace music_manage
             loadmusic();
         }
 
-        
 
+        TimeSpan time = new TimeSpan(0, 0, 0);
         private void Multitimer_Tick(object? sender, EventArgs e)//timer chay khi nhac dc phat
         {
-            
+            setValueforUC(time);
+            time.Add(new TimeSpan(0,0,1));
         }
 
         #region eventagrs
@@ -63,7 +64,11 @@ namespace music_manage
             {
                 savesystem.SavePathMusic(listmusic);
             }
-
+            Application.Current.Shutdown();
+        }
+        void minimize(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
         private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e) // keo tha khung window
         {
@@ -168,6 +173,7 @@ namespace music_manage
         #endregion
         private void Player_MediaEnded(object? sender, EventArgs e)
         {
+            time.Multiply(0);//reset timespan 
             if (replay == replaymode.ReplayAll)
             {
                 chagnemusicnextandplay();
@@ -253,6 +259,7 @@ namespace music_manage
         }
         #endregion
         #region My_method
+       
         void PlayAt(int seccond)
         {
             player.Position = new TimeSpan(0, 0, seccond);
@@ -261,11 +268,13 @@ namespace music_manage
         {
             mainboard.value = ts.TotalSeconds;
         }
+        
         void updateUIlistmusics() // on
         {
-            lvmusic.Items.Clear();
-            if (listmusic != null)
+            if (listmusic != null&&listmusic.Count!=0)
             {
+                MessageBox.Show(listmusic[0].Title.ToString());
+                lvmusic.Items.Clear();
                 for (int i = 0, n = listmusic.Count; i < n; i++)
                 {
                     ListViewItem musicUI = new ListViewItem();
@@ -281,15 +290,19 @@ namespace music_manage
 
         void play()
         {
-            if (multitimer.IsEnabled)
+            if (currentplay != null)
             {
-                multitimer.Stop();
-            }
-            multitimer.Start();
+                if (multitimer.IsEnabled)
+                {
+                    multitimer.Stop();
+                }
+                multitimer.Start();
 
-            //play the currentplay music 
-            player.Open(new Uri(currentplay.Path));
-            player.Play();
+                //play the currentplay music 
+                player.Open(new Uri(currentplay.Path));
+                player.Play();
+            }
+           
 
         }
         void chagnemusicnextandplay()
@@ -300,12 +313,12 @@ namespace music_manage
                 play();
             }
         }
-        void loadmusic()
+        void loadmusic() //dc goij khi mo app
         {
             if (listmusic != null)
             {
                 listmusic.Clear();
-
+               
             }
             listmusic = savesystem.LoadPathMusic();
             updateUIlistmusics();

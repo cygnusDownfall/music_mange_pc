@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 F:\MWSPr\music_manage\App.xaml
-4-152608632
+6-774143841
 
-1134842277
+13310734236
 194-200944676
-MainWindow.xaml;resource\resourcedic.xaml;travelmainboard.xaml;windowform\findfolderpath.xaml;
+MainWindow.xaml;resource\Floatbutton.xaml;resource\resourcedic.xaml;resource\travelmainboard.xaml;windowform\findfolderpath.xaml;windowform\showliststations.xaml;
 
-False
+True
 

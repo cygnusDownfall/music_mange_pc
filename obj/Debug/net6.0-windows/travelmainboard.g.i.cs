@@ -61,7 +61,7 @@ namespace music_manage {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/music_manage;V1.0.0.0;component/travelmainboard.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/music_manage;component/travelmainboard.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\travelmainboard.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

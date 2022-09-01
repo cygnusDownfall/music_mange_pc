@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:uc="clr-namespace:music_manage"
+        xmlns:uc="clr-namespace:music_manage.resource"
         mc:Ignorable="d"
         FontSize="30"
         Title="MainWindow" Height="808" Width="1200"
@@ -25,9 +25,12 @@
                     Grid.Column="1"
                     >
 
-            <StackPanel Height="80" Background="Black" Orientation="Horizontal" HorizontalAlignment="Right">
+            <StackPanel Height="80" Background="Black" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Right">
+                <Button Style="{StaticResource restore}" Click="minimize" />
                 <Button Style="{StaticResource maxwindow}" Click="Maxsize"/>
-                <Button Style="{StaticResource exitbt}" Click="Button_Click"/>
+                <Button Style="{StaticResource exitbt}" Click="Button_Click" />
             </StackPanel>
             <StackPanel Width="720" 
                         Height="auto" 
@@ -69,7 +72,7 @@
                     <Button Style="{StaticResource mediaplaybt}" >
                         <Image Source="/picture/replay.png" Width="100" Height="100"/>
                     </Button>
-                    <Button Style="{StaticResource mediaplaybt}" >
+                    <Button Style="{StaticResource mediaplaybt}">
                         <Image Source="/picture/tsadd.png" Width="100" Height="100"/>
                     </Button>
                 </StackPanel>
@@ -83,16 +86,12 @@
                   Visibility="Collapsed"
                   
                   >
-                <Grid Mouse.MouseWheel="scrvw_MouseWheel" Panel.ZIndex="1">
-                    
-                </Grid>
-                <Border Style="{StaticResource borderListmusic}">
+                <Border Style="{StaticResource borderListmusic}" MouseWheel="scrvw_MouseWheel">
 
                     <ScrollViewer Style="{StaticResource scrollview}" 
                                   x:Name="scrvw"
-                                  
                                   PanningMode="VerticalOnly"
-                                  PanningRatio="50">
+                                  PanningRatio="100">
                        
 
                         <ListView x:Name="lvmusic" Style="{StaticResource lvmusic}" >
@@ -100,10 +99,11 @@
                             <ListViewItem Style="{StaticResource lvmusicitems}" MouseDoubleClick="Addmusicbt_Click">
                                 +  Add Your Music
                             </ListViewItem>
+                            
                         </ListView>
                     </ScrollViewer>
                 </Border>
-
+                <uc:Floatbutton />
             </Grid>
             <Grid x:Name="Detailpanel" Visibility="Collapsed">
 
