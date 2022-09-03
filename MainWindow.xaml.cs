@@ -170,6 +170,10 @@ namespace music_manage
         {
 
         }
+        void quickaddstation(object sender, RoutedEventArgs e)
+        {
+            currentplay.currentmusic_manager.
+        }
         #endregion
         private void Player_MediaEnded(object? sender, EventArgs e)
         {

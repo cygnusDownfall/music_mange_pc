@@ -28,7 +28,7 @@ namespace music_manage.windowform
                     Content="-",
                     Background=null
                 };
-                listViewItem.Content = "";
+                listViewItem.Content = ""+delete;
                 liststationsUI.Items.Add(listViewItem);
             }
         }

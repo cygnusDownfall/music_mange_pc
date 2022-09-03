@@ -74,9 +74,11 @@
                     <Button Style="{StaticResource randommusic}" Click="Randommusics">
                         <Image Source="/picture/random.png" Width="100" Height="100"/>
                     </Button>
+                    <Button Style="{StaticResource quickaddstation}" Click="quickaddstation"/>
                     <Button Style="{StaticResource mediaplaybt}" Click="showliststations">
                         <Image Source="/picture/tsadd.png" Width="100" Height="100"/>
                     </Button>
+                    
                 </StackPanel>
                 
                 

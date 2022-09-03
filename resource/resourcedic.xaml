@@ -17,7 +17,8 @@
     <!--#endregion-->
     <!--#region images-->
     <Image x:Key="max" Source="pack://application:,,,/picture/max.png"/>
-    <Image x:Key="random2" Source="pack://application:,,,/picture/random.png"/>
+    <Image x:Key="random2" Source="pack://application:,,,/picture/random2.png"/>
+    <Image x:Key="quickadd" Source="pack://application:,,,/picture/quickaddstation.png"/>
     <!--#endregion-->
     <!--#region Style-->
 
@@ -64,6 +65,9 @@
 
             </Trigger>
         </Style.Triggers>
+    </Style>
+    <Style x:Key="quickaddstation" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
+        <Setter Property="Content" Value="{StaticResource quickadd}"/>
     </Style>
     <!--#endregion-->
     <Style x:Key="borderW" TargetType="Border">

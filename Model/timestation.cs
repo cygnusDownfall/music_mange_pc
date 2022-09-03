@@ -8,22 +8,22 @@ namespace music_manage.Model
         int? secconds { get; set; }
         public TimeSpan timeSpan;
         string? Mota { get; set; }
-        timestation(int seccond)
+        public timestation(int seccond)
         {
             secconds = seccond;
             timeSpan = new TimeSpan(0, 0, seccond);
         }
-        timestation(int seccond,string mota)
+        public timestation(int seccond,string mota)
         {
             secconds = seccond;
             Mota = mota;
             timeSpan = new TimeSpan(0, 0, seccond);
         }
-        timestation(TimeSpan ts)
+        public timestation(TimeSpan ts)
         {
             timeSpan = ts;
         }
-        timestation(TimeSpan ts, string mota)
+        public timestation(TimeSpan ts, string mota)
         {
             timeSpan = ts;
             Mota = mota;
@@ -53,6 +53,10 @@ namespace music_manage.Model
         public void previous()
         {
             movetoId(idcurrentts - 1);
+        }
+        public void Addstation(TimeSpan ts)
+        {
+            timestation tst = new timestation(ts);
         }
     }
     public class music
