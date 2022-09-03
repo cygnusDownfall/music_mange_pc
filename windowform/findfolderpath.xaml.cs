@@ -24,22 +24,12 @@ namespace music_manage.windowform
         {
             foreach (var x in musicsfolderlocations.Children)
             {
-                try
-                {
                     System.Windows.Controls.TextBox? textBox=x as System.Windows.Controls.TextBox;
                     if (textBox != null)
                     {
                         folderpath.Add(textBox.Text);
                     }
-                    
-                }
-                catch
-                {
-
-                }
-
             }
-            //MessageBox.Show(folderpath.ToString()); da xong
             sendlistfolderpath(new eventsendpath(folderpath));
             this.Close();
         }

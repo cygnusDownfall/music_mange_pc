@@ -15,8 +15,10 @@
         <GradientStop Color="DarkViolet" Offset="0.55"/>
     </LinearGradientBrush>
     <!--#endregion-->
-
+    <!--#region images-->
     <Image x:Key="max" Source="pack://application:,,,/picture/max.png"/>
+    <Image x:Key="random2" Source="pack://application:,,,/picture/random.png"/>
+    <!--#endregion-->
     <!--#region Style-->
 
     <!--#region style of mediaplaybt-->
@@ -53,7 +55,15 @@
         <Setter Property="Orientation" Value="Horizontal"/>
     </Style>
     <Style x:Key="addstation" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
-           
+
+    </Style>
+    <Style x:Key="randommusic" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
+        <Style.Triggers>
+            <Trigger Property="ClickMode" Value="Press">
+                <Setter Property="Content" Value="{StaticResource random2}"/>
+
+            </Trigger>
+        </Style.Triggers>
     </Style>
     <!--#endregion-->
     <Style x:Key="borderW" TargetType="Border">
@@ -82,7 +92,7 @@
         <Setter Property="FontSize" Value="20"/>
 
     </Style>
-
+    <!--#region headerbar-->
     <Style x:Key="exitbt" TargetType="Button">
         <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="80"/>
@@ -108,12 +118,13 @@
         <Setter Property="BorderBrush"  Value="{x:Null}"/>
         <Setter Property="FontSize" Value="40"/>
     </Style>
-    <Style x:Key="restore" TargetType="Button" BasedOn="{StaticResource exitbt}">
+    <Style x:Key="minimize" TargetType="Button" BasedOn="{StaticResource exitbt}">
         <Setter Property="Content" Value="_"/>
         <Setter Property="FontSize" Value="60"/>
         <Setter Property="VerticalContentAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
+    <!--#endregion-->
     <Style x:Key="scrollview" TargetType="ScrollViewer">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>

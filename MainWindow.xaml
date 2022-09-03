@@ -28,7 +28,7 @@
             <StackPanel Height="80" Background="Black" 
                         Orientation="Horizontal" 
                         HorizontalAlignment="Right">
-                <Button Style="{StaticResource restore}" Click="minimize" />
+                <Button Style="{StaticResource minimize}" Click="minimize" />
                 <Button Style="{StaticResource maxwindow}" Click="Maxsize"/>
                 <Button Style="{StaticResource exitbt}" Click="Button_Click" />
             </StackPanel>
@@ -71,8 +71,8 @@
                     <Button Style="{StaticResource mediaplaybt}" Click="replaymusic">
                         <Image Source="/picture/replay.png" Width="100" Height="100"/>
                     </Button>
-                    <Button Style="{StaticResource mediaplaybt}" >
-                        <Image Source="/picture/replay.png" Width="100" Height="100"/>
+                    <Button Style="{StaticResource randommusic}" Click="Randommusics">
+                        <Image Source="/picture/random.png" Width="100" Height="100"/>
                     </Button>
                     <Button Style="{StaticResource mediaplaybt}" Click="showliststations">
                         <Image Source="/picture/tsadd.png" Width="100" Height="100"/>

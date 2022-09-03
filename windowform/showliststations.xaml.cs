@@ -1,6 +1,6 @@
 ﻿using music_manage.Model;
 using System.Windows;
-
+using System.Windows.Controls;
 
 namespace music_manage.windowform
 {
@@ -15,9 +15,21 @@ namespace music_manage.windowform
         }
         void loadstation()
         {
+            if (timestations == null)
+            {
+                return;
+            }
+
             for(int i = 0, n = timestations.count; i < n; i++)
             {
-
+                ListViewItem listViewItem = new ListViewItem();
+                Button delete = new Button()
+                {
+                    Content="-",
+                    Background=null
+                };
+                listViewItem.Content = "";
+                liststationsUI.Items.Add(listViewItem);
             }
         }
     }

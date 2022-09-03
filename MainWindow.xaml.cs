@@ -166,6 +166,10 @@ namespace music_manage
 
             }
         }
+        private void Randommusics(object sender, RoutedEventArgs e)
+        {
+
+        }
         #endregion
         private void Player_MediaEnded(object? sender, EventArgs e)
         {
@@ -228,7 +232,7 @@ namespace music_manage
             {
                 currentplay = listmusic[Convert.ToInt32(listViewItem.Tag)];
                 play();
-                isplayed = true;
+                
             }
         }
 
@@ -311,6 +315,7 @@ namespace music_manage
                 //play the currentplay music 
                 player.Open(new Uri(currentplay.Path));
                 player.Play();
+                isplayed = true;
                 namemusic.Text = currentplay.Title;
             }
            

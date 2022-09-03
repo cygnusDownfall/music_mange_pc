@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:music_manage.windowform"
         mc:Ignorable="d"
-        Title="showliststations" Height="450" Width="800">
+        WindowStyle="None"
+        Title="showliststations" Height="450" Width="400">
     <Grid>
-        
+        <ListView  x:Name="liststationsUI"
+                       Height="auto"
+                       VerticalAlignment="Stretch">
+
+        </ListView>
+        <StatusBar VerticalAlignment="Bottom">
+            <StatusBarItem>Số lượng: </StatusBarItem>
+            <StatusBarItem>dscsc </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>
