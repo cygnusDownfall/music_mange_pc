@@ -44,7 +44,7 @@ namespace music_manage.windowform
         void exit(object sender, RoutedEventArgs e)
         {
             this.Close();
-            //MessageBox.Show(this.WindowState.ToString());
+            
         }
     }
 }

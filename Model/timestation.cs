@@ -57,17 +57,19 @@ namespace music_manage.Model
         public void Addstation(TimeSpan ts)
         {
             timestation tst = new timestation(ts);
+            timestations.Add(tst);
         }
     }
     public class music
     {
         public string Path;
         public string Title;
-        public timestation_manager? currentmusic_manager;
+        public timestation_manager currentmusic_manager;
         public music(string title, string path)
         {
             Path = path;
             Title = title;
+            currentmusic_manager = new timestation_manager(new List<timestation>());
         }
         public music(string title, string path,List<timestation> timestations)
         {

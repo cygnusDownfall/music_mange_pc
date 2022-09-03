@@ -9,13 +9,14 @@ namespace music_manage.Model
 
         public static void SavePathMusic(List<music> listmusic)
         {
+           //co chay
             string savefilepath = AppDomain.CurrentDomain.BaseDirectory.ToString() + "data.txt";
             if (!File.Exists(savefilepath))
             {
                 FileStream fileStream = new FileStream(savefilepath, FileMode.Create);
             }
 
-            StreamWriter strwrt = new StreamWriter(savefilepath);
+            StreamWriter strwrt = new StreamWriter(savefilepath,false);
             foreach (var x in listmusic)
             {
                 strwrt.Write(x.Title + " " + x.Path + "\n");

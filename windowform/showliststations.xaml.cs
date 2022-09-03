@@ -19,9 +19,10 @@ namespace music_manage.windowform
             {
                 return;
             }
-
+            
             for(int i = 0, n = timestations.count; i < n; i++)
             {
+                MessageBox.Show("k ne");
                 ListViewItem listViewItem = new ListViewItem();
                 Button delete = new Button()
                 {

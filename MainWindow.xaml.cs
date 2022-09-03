@@ -172,7 +172,7 @@ namespace music_manage
         }
         void quickaddstation(object sender, RoutedEventArgs e)
         {
-            currentplay.currentmusic_manager.
+            currentplay.currentmusic_manager.Addstation(player.Position);
         }
         #endregion
         private void Player_MediaEnded(object? sender, EventArgs e)
@@ -239,7 +239,12 @@ namespace music_manage
                 
             }
         }
-
+        private void showliststations(object sender, RoutedEventArgs e)
+        {
+            showliststations showliststation = new showliststations();
+            showliststation.timestations = currentplay.currentmusic_manager;
+            showliststation.ShowDialog();
+        }
         #endregion
         #region customevent
         public void AddmusicEvent(object? sender, eventsendpath e)
@@ -261,12 +266,7 @@ namespace music_manage
             updateUIlistmusics();
 
         }
-        private void showliststations(object sender, RoutedEventArgs e)
-        {
-            showliststations showliststation = new showliststations();
-            showliststation.timestations = currentplay.currentmusic_manager;
-            showliststation.ShowDialog();
-        }
+        
         #endregion
         #region My_method
 
@@ -291,7 +291,6 @@ namespace music_manage
         {
             if (listmusic != null&&listmusic.Count!=0)
             {
-                MessageBox.Show(listmusic[0].Title.ToString());
                 lvmusic.Items.Clear();
                 for (int i = 0, n = listmusic.Count; i < n; i++)
                 {
