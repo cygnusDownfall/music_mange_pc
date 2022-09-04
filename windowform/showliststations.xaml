@@ -5,13 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:music_manage.windowform"
         mc:Ignorable="d"
-        WindowStyle="None"
         Title="showliststations" Height="450" Width="400">
     <Grid>
         <ListView  x:Name="liststationsUI"
                        Height="auto"
                        VerticalAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
 
+                    </TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
         <StatusBar VerticalAlignment="Bottom">
             <StatusBarItem>Số lượng: </StatusBarItem>

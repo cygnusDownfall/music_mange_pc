@@ -8,30 +8,35 @@ namespace music_manage.windowform
     public partial class showliststations : Window
     {
         public timestation_manager timestations;
-        public showliststations()
+        public showliststations(timestation_manager tsm)
         {
+            timestations = tsm;
             InitializeComponent();
             loadstation();
         }
+
         void loadstation()
         {
-            if (timestations == null)
+            if (timestations == null) //null
             {
                 return;
             }
             
-            for(int i = 0, n = timestations.count; i < n; i++)
+            for (int i = 0, n = timestations.count; i < n; i++)
             {
-                MessageBox.Show("k ne");
+                
                 ListViewItem listViewItem = new ListViewItem();
                 Button delete = new Button()
                 {
                     Content="-",
                     Background=null
                 };
-                listViewItem.Content = ""+delete;
+                
+                listViewItem.Content= ""+delete;
                 liststationsUI.Items.Add(listViewItem);
             }
         }
+
+      
     }
 }

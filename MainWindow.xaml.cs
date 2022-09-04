@@ -241,8 +241,7 @@ namespace music_manage
         }
         private void showliststations(object sender, RoutedEventArgs e)
         {
-            showliststations showliststation = new showliststations();
-            showliststation.timestations = currentplay.currentmusic_manager;
+            showliststations showliststation = new showliststations(currentplay.currentmusic_manager);
             showliststation.ShowDialog();
         }
         #endregion

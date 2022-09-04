@@ -9,7 +9,7 @@ namespace music_manage.Model
 
         public static void SavePathMusic(List<music> listmusic)
         {
-           //co chay
+            //co chay
             string savefilepath = AppDomain.CurrentDomain.BaseDirectory.ToString() + "data.txt";
             if (!File.Exists(savefilepath))
             {
@@ -20,7 +20,7 @@ namespace music_manage.Model
             foreach (var x in listmusic)
             {
                 strwrt.Write(x.Title + " " + x.Path + "\n");
-
+                
             }
 
         }
