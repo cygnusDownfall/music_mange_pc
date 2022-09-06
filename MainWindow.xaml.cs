@@ -121,17 +121,19 @@ namespace music_manage
         }
         private void previousmusic(object sender, RoutedEventArgs e)
         {
-
-            if (listmusic != null)
+            if (listmusic == null)
             {
-                int id = listmusic.IndexOf(currentplay);
-                if (id != 1)
-                {
-                    currentplay = listmusic[id - 1];
-                    play();
-                }
-
-
+                return;
+            }
+            if (listmusic.Count==0)
+            {
+                return;
+            }
+            int id = listmusic.IndexOf(currentplay);
+            if (id != 1)
+            {
+                currentplay = listmusic[id - 1];
+                play();
             }
         }
         private void replaymusic(object sender, RoutedEventArgs e)
