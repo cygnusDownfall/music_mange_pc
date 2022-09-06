@@ -20,9 +20,9 @@ namespace music_manage
         replaymode replay;// co phat lai hay khong? 
         DispatcherTimer multitimer;//timer de chay 
 
-        bool isplayed = false;
+        bool isplayed = false, israndom = false;
         List<music>? listmusic;
-        
+
 
         music currentplay;
         public MainWindow()
@@ -35,7 +35,7 @@ namespace music_manage
             multitimer.Tick += Multitimer_Tick;
 
             InitializeComponent();
-            
+
             loadmusic();
         }
 
@@ -44,7 +44,7 @@ namespace music_manage
         private void Multitimer_Tick(object? sender, EventArgs e)//timer chay khi nhac dc phat
         {
             setValueforUC(time);
-            time.Add(new TimeSpan(0,0,1));
+            time.Add(new TimeSpan(0, 0, 1));
         }
 
         #region eventagrs
@@ -100,6 +100,15 @@ namespace music_manage
         }
         private void nextmusic(object sender, RoutedEventArgs e)
         {
+
+            if (listmusic == null)
+            {
+                return;
+            }
+            if (listmusic.Count == 0)
+            {
+                return;
+            }
             chagnemusicnextandplay();
         }
         private void nextstation(object sender, RoutedEventArgs e)
@@ -109,7 +118,7 @@ namespace music_manage
                 currentplay.currentmusic_manager.next();
                 player.Position = currentplay.currentmusic_manager.currentts();
             }
-            
+
         }
         private void previousstation(object sender, RoutedEventArgs e)
         {
@@ -125,12 +134,12 @@ namespace music_manage
             {
                 return;
             }
-            if (listmusic.Count==0)
+            if (listmusic.Count == 0)
             {
                 return;
             }
             int id = listmusic.IndexOf(currentplay);
-            if (id != 1)
+            if (id > 0)
             {
                 currentplay = listmusic[id - 1];
                 play();
@@ -155,13 +164,13 @@ namespace music_manage
                     {
                         replay = replaymode.ReplayAll;
 
-                        icontent.Source = new BitmapImage(new System.Uri("pack://application:,,,/picture/replay3.png")); 
+                        icontent.Source = new BitmapImage(new System.Uri("pack://application:,,,/picture/replay3.png"));
                     }
                     else
                     {
                         replay = replaymode.noReplay;
 
-                        icontent.Source = new BitmapImage(new System.Uri("pack://application:,,,/picture/replay.png")); 
+                        icontent.Source = new BitmapImage(new System.Uri("pack://application:,,,/picture/replay.png"));
 
                     }
                 }
@@ -170,6 +179,7 @@ namespace music_manage
         }
         private void Randommusics(object sender, RoutedEventArgs e)
         {
+            israndom = !israndom;
 
         }
         void quickaddstation(object sender, RoutedEventArgs e)
@@ -180,14 +190,31 @@ namespace music_manage
         private void Player_MediaEnded(object? sender, EventArgs e)
         {
             time.Multiply(0);//reset timespan 
+            //thu tu uu tien replayonly>random>replayall
+
+            //replayonly 
+            if (replay == replaymode.ReplayOnly)
+            {
+                play();
+            }
+            else
+            //random
+            if (israndom)
+            {
+                Random random = new Random();
+                Random rd = new Random(random.Next(1, 6));
+                currentplay = listmusic[rd.Next(0, listmusic.Count)];
+                play();
+            }
+            else
+            //replayAll
             if (replay == replaymode.ReplayAll)
             {
                 chagnemusicnextandplay();
             }
-            else if (replay == replaymode.ReplayOnly)
-            {
-                play();
-            }
+
+
+
         }
 
         void changetab(object sender, RoutedEventArgs e) // xong
@@ -238,7 +265,7 @@ namespace music_manage
             {
                 currentplay = listmusic[Convert.ToInt32(listViewItem.Tag)];
                 play();
-                
+
             }
         }
         private void showliststations(object sender, RoutedEventArgs e)
@@ -267,7 +294,7 @@ namespace music_manage
             updateUIlistmusics();
 
         }
-        
+
         #endregion
         #region My_method
 
@@ -287,10 +314,10 @@ namespace music_manage
         {
             mainboard.value = ts.TotalSeconds;
         }
-        
+
         void updateUIlistmusics() // on
         {
-            if (listmusic != null&&listmusic.Count!=0)
+            if (listmusic != null && listmusic.Count != 0)
             {
                 lvmusic.Items.Clear();
                 for (int i = 0, n = listmusic.Count; i < n; i++)
@@ -322,7 +349,7 @@ namespace music_manage
                 isplayed = true;
                 namemusic.Text = currentplay.Title;
             }
-           
+
 
         }
         void chagnemusicnextandplay()
@@ -338,7 +365,7 @@ namespace music_manage
             if (listmusic != null)
             {
                 listmusic.Clear();
-               
+
             }
             listmusic = savesystem.LoadPathMusic();
             updateUIlistmusics();
@@ -347,6 +374,6 @@ namespace music_manage
 
         #endregion
 
-       
+
     }
 }
