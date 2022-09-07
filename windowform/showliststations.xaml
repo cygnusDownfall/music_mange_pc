@@ -12,13 +12,14 @@
                        VerticalAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock>
+                    <TextBlock Text="{Binding }">
 
                     </TextBlock>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StatusBar VerticalAlignment="Bottom">
+        <StatusBar x:Name="footer"
+            VerticalAlignment="Bottom">
             <StatusBarItem>Số lượng: </StatusBarItem>
             <StatusBarItem>dscsc </StatusBarItem>
         </StatusBar>

@@ -186,6 +186,12 @@ namespace music_manage
         {
             currentplay.currentmusic_manager.Addstation(player.Position);
         }
+        void deletedata(object sender, RoutedEventArgs e)
+        {
+            listmusic.Clear();
+            savesystem.SavePathMusic(listmusic);
+            updateUIlistmusics();
+        }
         #endregion
         private void Player_MediaEnded(object? sender, EventArgs e)
         {

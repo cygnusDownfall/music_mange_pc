@@ -12,6 +12,7 @@
                    Source="picture/vector-truck-icon.png"  
                    Panel.ZIndex="1"
                    x:Name="truck" />
+        
 
         </Canvas>
 

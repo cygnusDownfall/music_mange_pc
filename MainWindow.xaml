@@ -11,9 +11,6 @@
         
         WindowStyle="None"
         >
-    <Window.Resources>
-
-    </Window.Resources>
     <Grid Style="{StaticResource mainwindow}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -108,6 +105,9 @@
                     </ScrollViewer>
                 </Border>
                 <uc:Floatbutton eventhandle="Addmusicbt_Click"/>
+                <Button Content="X" Click="deletedata"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"/>
             </Grid>
             <Grid x:Name="Detailpanel" Visibility="Collapsed">
 

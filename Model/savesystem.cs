@@ -19,7 +19,7 @@ namespace music_manage.Model
             StreamWriter strwrt = new StreamWriter(savefilepath,false);
             foreach (var x in listmusic)
             {
-                strwrt.Write(x.Title + " " + x.Path + "\n");
+                strwrt.Write(x.Title + "#" + x.Path + "\n");
                 
             }
 
@@ -42,7 +42,7 @@ namespace music_manage.Model
                     string Title = "", path = "";
                     for (int i = 0, n = x.Length; i < n; i++)
                     {
-                        if (x[i] == ' ')
+                        if (x[i] == '#')
                         {
                             title = false;
                         }
