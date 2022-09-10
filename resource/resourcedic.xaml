@@ -19,6 +19,7 @@
     <Image x:Key="max" Source="pack://application:,,,/picture/max.png"/>
     <Image x:Key="random2" Source="pack://application:,,,/picture/random2.png"/>
     <Image x:Key="quickadd" Source="pack://application:,,,/picture/quickaddstation.png"/>
+    <Image x:Key="pause" Source="pack://application:,,,/picture/pause.png"/>
     <!--#endregion-->
     <!--#region Style-->
 
@@ -34,6 +35,7 @@
     <Style x:Key="play" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
         <EventSetter Event="MouseEnter" Handler="hoverplaybt"/>
         <EventSetter Event="MouseLeave" Handler="lplaybt"/>
+        
     </Style>
     <Style x:Key="nextm" TargetType="Button" BasedOn="{StaticResource mediaplaybt}">
         <EventSetter Event="MouseEnter" Handler="hovernextm"/>

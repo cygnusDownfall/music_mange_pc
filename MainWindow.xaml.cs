@@ -86,15 +86,28 @@ namespace music_manage
         {
             if (!isplayed)
             {
-                isplayed = true;
                 play();
+
+
+                //star timmer
+
             }
             else
             {
                 isplayed = false;
                 multitimer.Stop();
                 player.Pause();
-
+            }
+            
+            //doi anh 
+            if (isplayed)
+            {
+                playUI.Source = new BitmapImage(new Uri("pack://application:,,,/picture/PlayUI.png"));
+            }
+            else
+            {
+                playUI.Source = new BitmapImage(new Uri("pack://application:,,,/picture/PlayUI.png"));
+                playUI.Source = new BitmapImage(new Uri("pack://application:,,,/picture/pause.png"));
             }
 
         }
@@ -360,11 +373,20 @@ namespace music_manage
         }
         void chagnemusicnextandplay()
         {
-            if (listmusic != null)
+            if (listmusic == null)
             {
-                currentplay = listmusic[listmusic.IndexOf(currentplay) + 1];
-                play();
+                return;
             }
+            if (listmusic.Count == 0)
+            {
+                return;
+            }
+            if (listmusic.IndexOf(currentplay) - listmusic.Count >=-1)
+            {
+                return;
+            }
+            currentplay = listmusic[listmusic.IndexOf(currentplay) + 1];
+            play();
         }
         void loadmusic() //dc goij khi mo app
         {

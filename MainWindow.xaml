@@ -50,7 +50,7 @@
 
                     </Button>
                     <Button Style="{StaticResource play}" Click="continueplay">
-                        <Image Source="/picture/PlayUI.png" Width="100" Height="100" />
+                        <Image x:Name="playUI" Source="/picture/PlayUI.png" Width="100" Height="100" />
                     </Button>
                     <Button Style="{StaticResource nextst}" Click="nextstation">
                         <Image Source="/picture/previousmove.png" Width="100" Height="100">
@@ -75,10 +75,8 @@
                     <Button Style="{StaticResource mediaplaybt}" Click="showliststations">
                         <Image Source="/picture/tsadd.png" Width="100" Height="100"/>
                     </Button>
-                    
+
                 </StackPanel>
-                
-                
             </StackPanel>
             <Grid x:Name="listmusicgr"  
                   HorizontalAlignment="Stretch" 

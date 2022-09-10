@@ -23,6 +23,7 @@
     <None Remove="picture\max.png" />
     <None Remove="picture\next.png" />
     <None Remove="picture\next2.png" />
+    <None Remove="picture\pause.png" />
     <None Remove="picture\PlayUI.png" />
     <None Remove="picture\PlayUI2.png" />
     <None Remove="picture\previousmove.png" />
@@ -40,6 +41,7 @@
   <ItemGroup>
     <Resource Include="font\dynar\DynaPuff-VariableFont.ttf" />
     <Resource Include="picture\max.png" />
+    <Resource Include="picture\pause.png" />
     <Resource Include="picture\PlayUI.png" />
     <Resource Include="picture\PlayUI2.png" />
     <Resource Include="picture\previousmove.png" />
