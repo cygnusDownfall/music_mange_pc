@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using music_manage.windowform;
@@ -7,28 +8,77 @@ namespace music_manage.Model
 {
     public partial class mainresourcedictionary : ResourceDictionary
     {
+        bool isplaybtisplay = true;
         public mainresourcedictionary()
         {
             InitializeComponent();
         }
+        void randomclicked(object sender, RoutedEventArgs e)
+        {
+            Button? button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+            Image? contented = button.Content as Image;
+            if (contented == null)
+            {
+                return;
+            }
+            if (button.Tag=="israndom")
+            {
+                contented.Source= new BitmapImage(new Uri("pack://application:,,,/picture/random2.png"));
+                button.Tag ="noyrandom";
+            }
+            else
+            {
+                contented.Source = new BitmapImage(new Uri("pack://application:,,,/picture/random.png"));
+                button.Tag = "israndom";
+            }
 
-        
+        }
+        void playclick(object sender,RoutedEventArgs e)
+        {
+            Button? button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+            Image? contented = button.Content as Image;
+            if (contented == null)
+            {
+                return;
+            }
+            if (!isplaybtisplay)
+            {
+                contented.Source = new BitmapImage(new Uri("pack://application:,,,/picture/PlayUI.png"));
+            }
+            else
+            {
+               contented.Source = new BitmapImage(new Uri("pack://application:,,,/picture/pause.png"));
+            }
+            isplaybtisplay = !isplaybtisplay;
+
+        }
         #region hover  
         public void hoverplaybt(object sender, System.Windows.Input.MouseEventArgs e)
         {
             Button? button = sender as Button;
-
-
-            if (button != null)
+            if (button == null)
+            {
+                return;
+            }
+            if (isplaybtisplay)
             {
                 Image? contented = button.Content as Image;
 
                 if (contented != null)
                 {
                     contented.Source = new BitmapImage(new System.Uri("pack://application:,,,/picture/PlayUI2.png"));
-
                 }
             }
+
+
         }
         public void hovernextm(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -99,9 +149,11 @@ namespace music_manage.Model
         public void lplaybt(object sender, System.Windows.Input.MouseEventArgs e)
         {
             Button? button = sender as Button;
-
-
-            if (button != null)
+            if (button == null)
+            {
+                return;
+            }
+            if (isplaybtisplay)
             {
                 Image? contented = button.Content as Image;
 
@@ -111,6 +163,7 @@ namespace music_manage.Model
 
                 }
             }
+
         }
         public void lnextm(object sender, System.Windows.Input.MouseEventArgs e)
         {

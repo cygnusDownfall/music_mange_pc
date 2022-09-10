@@ -98,17 +98,9 @@ namespace music_manage
                 multitimer.Stop();
                 player.Pause();
             }
+
+     
             
-            //doi anh 
-            if (isplayed)
-            {
-                playUI.Source = new BitmapImage(new Uri("pack://application:,,,/picture/PlayUI.png"));
-            }
-            else
-            {
-                playUI.Source = new BitmapImage(new Uri("pack://application:,,,/picture/PlayUI.png"));
-                playUI.Source = new BitmapImage(new Uri("pack://application:,,,/picture/pause.png"));
-            }
 
         }
         private void nextmusic(object sender, RoutedEventArgs e)
@@ -201,9 +193,13 @@ namespace music_manage
         }
         void deletedata(object sender, RoutedEventArgs e)
         {
-            listmusic.Clear();
-            savesystem.SavePathMusic(listmusic);
-            updateUIlistmusics();
+            if (listmusic != null)
+            {
+                listmusic.Clear();
+                savesystem.SavePathMusic(listmusic);
+                updateUIlistmusics();
+            }
+
         }
         #endregion
         private void Player_MediaEnded(object? sender, EventArgs e)
@@ -339,6 +335,7 @@ namespace music_manage
             if (listmusic != null && listmusic.Count != 0)
             {
                 lvmusic.Items.Clear();
+
                 for (int i = 0, n = listmusic.Count; i < n; i++)
                 {
                     ListViewItem musicUI = new ListViewItem();
@@ -381,7 +378,7 @@ namespace music_manage
             {
                 return;
             }
-            if (listmusic.IndexOf(currentplay) - listmusic.Count >=-1)
+            if (listmusic.IndexOf(currentplay) - listmusic.Count >= -1)
             {
                 return;
             }

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:music_manage.resource"
+        xmlns:model="clr-namespace:music_manage.Model"
         mc:Ignorable="d"
         FontSize="30"
         Title="MainWindow" Height="808" Width="1200"
@@ -34,7 +35,9 @@
                         x:Name="playermedia" 
                         >
                 <TextBlock x:Name="namemusic" Foreground="Wheat"
-                           HorizontalAlignment="Center"> </TextBlock>
+                           HorizontalAlignment="Center"
+                           TextWrapping="WrapWithOverflow"
+                           />
                 <uc:travelmainboard Width="700" Height="450"
                                     x:Name="mainboard"/>
                 <StackPanel Style="{StaticResource media}">
@@ -49,7 +52,7 @@
                         <Image Source="/picture/previousmove.png" Width="100" Height="100"/>
 
                     </Button>
-                    <Button Style="{StaticResource play}" Click="continueplay">
+                    <Button Style="{StaticResource play}" Click="continueplay" IsHitTestVisible="False">
                         <Image x:Name="playUI" Source="/picture/PlayUI.png" Width="100" Height="100" />
                     </Button>
                     <Button Style="{StaticResource nextst}" Click="nextstation">

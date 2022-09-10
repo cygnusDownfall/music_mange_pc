@@ -8,8 +8,8 @@
     <Grid>
         <Canvas>
             <Image  Panel.ZIndex="0"/>
-            <Image Width="50" Height="50"  
-                   Source="picture/vector-truck-icon.png"  
+            <Image  
+                   Source="picture/truck.png"  
                    Panel.ZIndex="1"
                    x:Name="truck" />
         
