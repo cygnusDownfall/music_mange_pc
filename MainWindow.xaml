@@ -26,7 +26,7 @@
             <StackPanel Height="80" Background="Black" 
                         Orientation="Horizontal" 
                         HorizontalAlignment="Right">
-                <Button Style="{StaticResource minimize}" Click="minimize" />
+                <Button Style="{StaticResource minimize}" Background="{StaticResource mini}" Click="minimize" />
                 <Button Style="{StaticResource maxwindow}" Click="Maxsize"/>
                 <Button Style="{StaticResource exitbt}" Click="Button_Click" />
             </StackPanel>
@@ -133,7 +133,7 @@
 
                 <Button x:Name="MyMusic" Content="My Music" Style="{StaticResource tabbt}" Click="changetab" Tag="1"/>
                 <Button x:Name="Playing" Content="Playing" Style="{StaticResource tabbt}" Click="changetab" Tag="2"/>
-                <Button x:Name="Detail" Content="Detail" Style="{StaticResource tabbt}" Click="changetab" Tag="3"/>
+                <Button x:Name="Detail" Content="List station" Style="{StaticResource tabbt}" Click="changetab" Tag="3"/>
                 <Button x:Name="Lyric" Content="Lyric" Style="{StaticResource tabbt}" Click="changetab" Tag="4"/>
             </StackPanel>
         </Border>

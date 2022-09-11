@@ -20,8 +20,7 @@
     <Image x:Key="random2" Source="pack://application:,,,/picture/random2.png"/>
     <Image x:Key="quickadd" Source="pack://application:,,,/picture/quickaddstation.png"/>
     <Image x:Key="pause" Source="pack://application:,,,/picture/pause.png"/>
-    <Image x:Key="mini" Source="pack://application:,,,/picture/minimize.png"/>
-    <!--#endregion-->
+    <ImageBrush x:Key="mini" ImageSource="pack://application:,,,/picture/minimize.png"/>
     <!--#region Style-->
 
     <!--#region style of mediaplaybt-->
@@ -123,11 +122,7 @@
     <Style x:Key="minimize" TargetType="Button" BasedOn="{StaticResource exitbt}">
         <Setter Property="Content" Value="_"/>
         <Setter Property="FontSize" Value="60"/>
-        <Setter Property="Background">
-            <Setter.Value>
-                <ImageBrush ImageSource="pack://application:,,,/picture/minimize.png"/>
-            </Setter.Value>
-        </Setter>
+        
         <Setter Property="VerticalContentAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
