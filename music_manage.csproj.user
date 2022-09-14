@@ -13,6 +13,9 @@
     <Compile Update="resource\liststationdetail.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="resource\Lyric.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="resource\travelmainboard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="resource\liststationdetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="resource\Lyric.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="resource\resourcedic.xaml">
