@@ -5,9 +5,9 @@ namespace music_manage.Model
 {
     public class timestation
     {
-        int? secconds { get; set; }
+        public int? secconds { get;}
         public TimeSpan timeSpan;
-        string? Mota { get; set; }
+        public string? Mota { get; set; }
         public timestation(int seccond)
         {
             secconds = seccond;
@@ -17,7 +17,7 @@ namespace music_manage.Model
         {
             secconds = seccond;
             Mota = mota;
-            timeSpan = new TimeSpan(0, 0, seccond);
+            
         }
         public timestation(TimeSpan ts)
         {

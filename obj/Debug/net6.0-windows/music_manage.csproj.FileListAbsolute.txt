@@ -31,3 +31,5 @@ F:\MWSPr\music_manage\obj\Debug\net6.0-windows\resource\Floatbutton.baml
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\resource\travelmainboard.baml
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\windowform\showliststations.g.cs
 F:\MWSPr\music_manage\obj\Debug\net6.0-windows\windowform\showliststations.baml
+F:\MWSPr\music_manage\obj\Debug\net6.0-windows\resource\liststationdetail.g.cs
+F:\MWSPr\music_manage\obj\Debug\net6.0-windows\resource\liststationdetail.baml

@@ -10,6 +10,9 @@
     <Compile Update="resource\Floatbutton.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="resource\liststationdetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="resource\travelmainboard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,6 +28,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="resource\Floatbutton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="resource\liststationdetail.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="resource\resourcedic.xaml">

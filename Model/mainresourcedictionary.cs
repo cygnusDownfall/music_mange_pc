@@ -25,15 +25,16 @@ namespace music_manage.Model
             {
                 return;
             }
-            if (button.Tag=="israndom")
-            {
-                contented.Source= new BitmapImage(new Uri("pack://application:,,,/picture/random2.png"));
-                button.Tag ="noyrandom";
-            }
-            else
+            if (button.Tag.ToString() is null or not "israndom")
             {
                 contented.Source = new BitmapImage(new Uri("pack://application:,,,/picture/random.png"));
                 button.Tag = "israndom";
+            }
+            else
+            {
+                contented.Source = new BitmapImage(new Uri("pack://application:,,,/picture/random2.png"));
+                button.Tag = "norandom";
+                
             }
 
         }

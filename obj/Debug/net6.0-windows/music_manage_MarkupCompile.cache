@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 F:\MWSPr\music_manage\App.xaml
-6-774143841
+782493516
 
-111898028211
+12-739898601
 194-200944676
-MainWindow.xaml;resource\Floatbutton.xaml;resource\resourcedic.xaml;resource\travelmainboard.xaml;windowform\findfolderpath.xaml;windowform\showliststations.xaml;
+MainWindow.xaml;resource\Floatbutton.xaml;resource\liststationdetail.xaml;resource\resourcedic.xaml;resource\travelmainboard.xaml;windowform\findfolderpath.xaml;windowform\showliststations.xaml;
 
 False
 

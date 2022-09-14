@@ -111,7 +111,7 @@
                         HorizontalAlignment="Right"/>
             </Grid>
             <Grid x:Name="Detailpanel" Visibility="Collapsed">
-
+                <uc:liststationdetail/>
             </Grid>
             <Grid x:Name="Lyricpanel" Visibility="Collapsed">
 

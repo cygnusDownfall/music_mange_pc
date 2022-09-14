@@ -10,6 +10,12 @@
 
     <!--#endregion-->
     <!--#region LinearGradientBrush-->
+    <LinearGradientBrush x:Key="RVMVBV" Opacity="50" StartPoint="0,0" EndPoint="2,1" >
+        <GradientStop Color="Red" Offset="0"/>
+        <GradientStop Color="Violet" Offset="0.8"/>
+        <GradientStop Color="MediumVioletRed"  Offset="1"/>
+        <GradientStop Color="BlueViolet" Offset="0.1"/>
+    </LinearGradientBrush>
     <LinearGradientBrush x:Key="W" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="LimeGreen" Offset="0.45"/>
         <GradientStop Color="DarkViolet" Offset="0.55"/>
@@ -141,16 +147,7 @@
         <Setter Property="BorderThickness" Value="10"/>
         <Setter Property="BorderBrush"  Value="Black"/>
         <Setter Property="FontSize" Value="40"/>
-        <Setter Property="Background">
-            <Setter.Value>
-                <LinearGradientBrush Opacity="50" StartPoint="0,0" EndPoint="2,1" >
-                    <GradientStop Color="Red" Offset="0"/>
-                    <GradientStop Color="Violet" Offset="0.8"/>
-                    <GradientStop Color="MediumVioletRed"  Offset="1"/>
-                    <GradientStop Color="BlueViolet" Offset="0.1"/>
-                </LinearGradientBrush>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Background" Value="{StaticResource RVMVBV}"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalAlignment"  Value="Stretch"/>
     </Style>

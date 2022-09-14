@@ -16,15 +16,18 @@ namespace music_manage
     enum replaymode { noReplay, ReplayOnly, ReplayAll }
     public partial class MainWindow : Window
     {
+        #region properties
         MediaPlayer player;//trinh phat nhac
         replaymode replay;// co phat lai hay khong? 
         DispatcherTimer multitimer;//timer de chay 
 
         bool isplayed = false, israndom = false;
         List<music>? listmusic;
-
+        TimeSpan time = new TimeSpan(0, 0, 0); // ???
 
         music currentplay;
+
+        #endregion
         public MainWindow()
         {
             player = new MediaPlayer();
@@ -40,7 +43,7 @@ namespace music_manage
         }
 
 
-        TimeSpan time = new TimeSpan(0, 0, 0);
+        
         private void Multitimer_Tick(object? sender, EventArgs e)//timer chay khi nhac dc phat
         {
             setValueforUC(time);
